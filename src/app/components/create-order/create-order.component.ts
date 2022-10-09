@@ -4,7 +4,7 @@ import { __values } from 'tslib';
 @Component({
   selector: 'app-create-order',
   templateUrl: './create-order.component.html',
-  styleUrls: ['./create-order.component.scss'],
+  styleUrls: ['./create-order.component.css'],
 })
 export class CreateOrderComponent implements OnInit {
   po_number: String = '';
