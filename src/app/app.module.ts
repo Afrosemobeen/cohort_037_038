@@ -9,6 +9,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -17,9 +18,11 @@ import { FormsModule } from '@angular/forms';
     UpdateOrderComponent,
     DisplayOrderComponent,
     PurchaseOrderComponent,
+    
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule,MatIconModule],
   providers: [],
   bootstrap: [AppComponent],
+  
 })
 export class AppModule {}
