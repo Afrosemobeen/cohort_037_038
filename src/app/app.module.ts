@@ -20,7 +20,7 @@ import {MatIconModule} from '@angular/material/icon';
     PurchaseOrderComponent,
     
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule,MatIconModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, MatIconModule],
   providers: [],
   bootstrap: [AppComponent],
   
