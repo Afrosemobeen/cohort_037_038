@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PurchaseOrderService } from 'src/app/services/purchase-order.service';
 import { __values } from 'tslib';
 
 @Component({
@@ -15,9 +16,12 @@ export class CreateOrderComponent implements OnInit {
   state: String = '';
   city: String = '';
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  constructor(private purchaseOrderSer: PurchaseOrderService) {}
+  ponum: any = [];
+  ngOnInit(): void {
+    this.ponum = this.purchaseOrderSer.poNumber();
+    console.log(this.ponum);
+  }
 
   createOrder() {
     console.log(this.po_number);

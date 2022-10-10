@@ -9,17 +9,12 @@
       <div class="two-col">
         <div class="form-group col1">
           <label for="po num">Po Number</label>
-          <input type="text" class="form-control" [(ngModel)]="po_number" />
-          <!-- <button
-            type="button"
-            class="btn form-control dropdown-toggle"
-            data-toggle="dropdown"
-          ></button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Link 1</a>
-            <a class="dropdown-item" href="#">Link 2</a>
-            <a class="dropdown-item" href="#">Link 3</a>
-          </div> -->
+          <select class="col1 form-control">
+            <option>Select PO number</option>
+            <option *ngFor="let poNumbers of ponum">
+              {{ poNumbers.po_num }}
+            </option>
+          </select>
         </div>
 
         <div class="form-group col2">
