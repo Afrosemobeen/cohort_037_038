@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login-form',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  loginForm: FormGroup;
+  constructor(private fb: FormBuilder, private http: HttpClient) {
+    this.loginForm = this.fb.group({
+      username: [''],
+      password: [''],
+    });
   }
 
+  ngOnInit(): void {}
 }
