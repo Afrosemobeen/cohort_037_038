@@ -15,18 +15,7 @@ export class SignupFormComponent implements OnInit {
     });
   }
   signUp() {
-    this.http
-      .post<any>('http://localhost:3000/signupForm', this.signUpForm.value)
-      .subscribe({
-        next: (result) => {
-          console.log('result', result);
-          alert('Sign-up Successful !');
-          this.signUpForm.reset();
-        },
-        error: () => {
-          alert('something went wrong');
-        },
-      });
+    console.log(this.signUpForm.value);
   }
   ngOnInit(): void {}
 }

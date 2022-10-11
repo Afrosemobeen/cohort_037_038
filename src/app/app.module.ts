@@ -14,13 +14,6 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
 import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent, LoginFormComponent, SignupFormComponent],
-<<<<<<< HEAD
-
-  // imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
-
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, ReactiveFormsModule],
-
-=======
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -28,7 +21,6 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule,
   ],
->>>>>>> cd28361f8bb34319f73a8d33340face0c7daf117
   providers: [],
   bootstrap: [AppComponent],
 })
