@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { SharedRoutingModule } from './shared-routing.module';
-import { CreateOrderComponent } from '../components/create-order/create-order.component';
-import { UpdateOrderComponent } from '../components/update-order/update-order.component';
-import { DisplayOrderComponent } from '../components/display-order/display-order.component';
-import { PurchaseOrderComponent } from '../components/purchase-order/purchase-order.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from '../app-routing.module';
+import { CreateOrderComponent } from './components/create-order/create-order.component';
+import { UpdateOrderComponent } from './components/update-order/update-order.component';
+import { DisplayOrderComponent } from './components/display-order/display-order.component';
+import { PurchaseOrderComponent } from './components/purchase-order/purchase-order.component';
 
 @NgModule({
   declarations: [
@@ -29,5 +28,6 @@ import { AppRoutingModule } from '../app-routing.module';
     BrowserAnimationsModule,
     AppRoutingModule,
   ],
+  exports: [PurchaseOrderComponent],
 })
 export class SharedModule {}
