@@ -1,7 +1,7 @@
 <div>
     <h3>SIGN UP</h3>
     <div>
-        <form>
+        <form [formGroup] = "signupForm" (ngSubmit)="signUp()" >
             <div>
                 <label>Email</label>
                 <input type = "email"   class = "form-control" 
@@ -12,6 +12,7 @@
                 <input type = "password" class = "form-control" 
                        formControlName = "password" placeholder="Enter Your Password">
             </div>
+            <button>SIGN UP</button>
         </form>
     </div>
 </div>
