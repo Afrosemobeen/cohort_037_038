@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'app-update-order',
   templateUrl: './update-order.component.html',
@@ -16,8 +15,5 @@ export class UpdateOrderComponent implements OnInit {
   city: String = '';
   constructor() {}
 
-  ngOnInit(): void {
-  }
-
-
+  ngOnInit(): void {}
 }
