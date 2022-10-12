@@ -6,7 +6,6 @@ body {
 }
 
 .container {
-  margin-top: -60px;
   max-width: 1200px;
   width: 100%;
   border-radius: 6px;
@@ -14,7 +13,7 @@ body {
   background-color: #9dc6f2;
   padding: 30px;
 
-  /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 .container .card {
   margin-top: 10px;
@@ -23,8 +22,8 @@ body {
 
 h3 {
   text-align: center;
-  margin-top: -20px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   font-size: 20px;
   font-weight: 600;
 }
