@@ -1,0 +1,68 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #9dc6f2;
+    padding-top: 30px;
+    padding-bottom: 80px;
+    padding-left: 30px;
+    padding-right: 30px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  .title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .two-col {
+    overflow: hidden;
+    justify-content: space-between; /* Makes this div contain its floats */
+  }
+  
+  .two-col .col1,
+  .two-col .col2 {
+    width: 50%;
+  }
+  
+  .two-col .col1 {
+    float: left;
+  }
+  
+  .two-col .col2 {
+    float: right;
+  }
+  
+  .two-col label {
+    display: block;
+  }
+  input {
+    width: 90%;
+    height: 40px;
+  }
+  textarea {
+    width: 90%;
+    height: 40px;
+  }
+  label {
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .form-group {
+    padding: 18px;
+  }
+  .container .card {
+    margin-top: 10px;
+  }
+  
