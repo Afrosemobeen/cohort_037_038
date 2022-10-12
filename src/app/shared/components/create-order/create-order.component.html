@@ -9,7 +9,7 @@
       <div class="two-col">
         <div class="form-group col1">
           <label for="po num">Po Number</label>
-          <select class="col1 form-control">
+          <select class="col1 form-control" style="background-color: royalblue">
             <option>Select PO number</option>
             <option *ngFor="let poNumbers of ponum">
               {{ poNumbers.po_num }}
@@ -20,6 +20,7 @@
         <div class="form-group col2">
           <label for="description">Description</label>
           <textarea
+            style="background-color: royalblue"
             type="description"
             class="form-control"
             [(ngModel)]="desc"
@@ -28,25 +29,50 @@
 
         <div class="form-group col1">
           <label for="date">Date</label>
-          <input type="date" class="form-control" [(ngModel)]="date" />
+          <input
+            type="date"
+            class="form-control"
+            [(ngModel)]="date"
+            style="background-color: royalblue"
+          />
         </div>
         <div class="form-group col2">
           <label for="state">State</label>
-          <input type="text" class="form-control" [(ngModel)]="state" />
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="state"
+            style="background-color: royalblue"
+          />
         </div>
 
         <div class="form-group col1">
           <label for="Total Amount">Total Amount</label>
-          <input type="text" class="form-control" [(ngModel)]="total_amount" />
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="total_amount"
+            style="background-color: royalblue"
+          />
         </div>
 
         <div class="form-group col2">
           <label for="city">City</label>
-          <input type="text" class="form-control" [(ngModel)]="city" />
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="city"
+            style="background-color: royalblue"
+          />
         </div>
         <div class="form-group col1">
           <label for="user name"> User Name</label>
-          <input type="text" class="form-control" [(ngModel)]="username" />
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="username"
+            style="background-color: royalblue"
+          />
         </div>
 
         <div class="my-4 col2 text-center">
