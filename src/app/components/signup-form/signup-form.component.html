@@ -1,5 +1,5 @@
-<div>
-    <h3>SIGN UP</h3>
+<div class="col-md-4" class="form-box">
+    <h3 class="text-center">SIGN UP</h3>
     <div>
         <form [formGroup] = "signUpForm" (ngSubmit)="signUp()" >
             <div>
@@ -12,7 +12,7 @@
                 <input type = "password" class = "form-control" 
                        formControlName = "password" placeholder="Enter Your Password">
             </div>
-            <button>SIGN UP</button>
+            <button class="btn btn-danger mx- my-4 ">SIGN UP</button>
         </form>
     </div>
 </div>
