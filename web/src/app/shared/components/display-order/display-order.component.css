@@ -24,16 +24,14 @@ thead {
   background-color: royalblue;
 }
 
-.icon{
+.icon:hover {
   cursor: pointer;
   font-weight: bolder;
-  
 }
 
 tbody tr:nth-child(even) {
   background-color: rgb(213, 225, 236);
   text-align: center;
-  
 }
 
 tbody tr:nth-child(odd) {
