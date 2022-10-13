@@ -3,6 +3,7 @@
   <app-update-order
     [order]="currEmp"
     *ngIf="formFlag === 'update'"
+    (onCancelUpdateEvent)="cancelUpdateForm($event)"
   ></app-update-order>
   <app-display-order (onOrderEditEvent)="editOrder($event)"></app-display-order>
 </div>

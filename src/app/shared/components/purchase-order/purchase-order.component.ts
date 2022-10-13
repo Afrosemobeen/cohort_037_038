@@ -17,4 +17,8 @@ export class PurchaseOrderComponent implements OnInit {
     this.formFlag = 'update';
     this.currEmp = { ...order };
   }
+
+  cancelUpdateForm(data: any) {
+    this.formFlag = 'create';
+  }
 }
