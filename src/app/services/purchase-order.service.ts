@@ -19,7 +19,7 @@ export class PurchaseOrderService {
     return [
       {
         po_number: 'po123',
-        date: '2011/10/22',
+        date: '22 / 10 / 2011',
         total_amount: '12000',
         username: 'Snehal',
         desc: 'I am snehal',
@@ -28,7 +28,7 @@ export class PurchaseOrderService {
       },
       {
         po_number: 'po456',
-        date: '2011/15/21',
+        date: '21 / 15 / 2011',
         total_amount: '12500',
         username: 'Pranay',
         desc: 'I am Pranay',
@@ -37,7 +37,7 @@ export class PurchaseOrderService {
       },
       {
         po_number: 'po789',
-        date: '2022/09/22',
+        date: '22 / 09 / 2022',
         total_amount: '23000',
         username: 'Ganesh',
         desc: 'I am Ganesh',
@@ -46,7 +46,7 @@ export class PurchaseOrderService {
       },
       {
         po_number: 'po563',
-        date: '2016/10/15',
+        date: '15 / 10 / 2016',
         total_amount: '52000',
         username: 'Sarthak',
         desc: 'I am Sarthak',

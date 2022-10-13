@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { PurchaseOrderService } from 'src/app/services/purchase-order.service';
 
 @Component({
   selector: 'app-update-order',
@@ -16,11 +17,15 @@ export class UpdateOrderComponent implements OnInit {
   desc: string = '';
   state: string = '';
   city: string = '';
-  constructor() {
+  ponum: any = [];
+  constructor(private purchaseOrderSer: PurchaseOrderService) {
     this.onCancelUpdateEvent = new EventEmitter();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.ponum = this.purchaseOrderSer.poNumber();
+    console.log(this.ponum);
+  }
 
   cancelUpdateForm() {
     this.onCancelUpdateEvent.emit();
