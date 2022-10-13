@@ -41,12 +41,14 @@ body {
 input {
   width: 90%;
   height: 40px;
+  margin: 0;
 }
 textarea {
   width: 90%;
   height: 40px;
 }
 label {
+  font-weight: bold;
   font-size: 16px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

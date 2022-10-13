@@ -7,7 +7,6 @@ body {
   position: relative;
   max-width: 1200px;
   width: 100%;
-  border-radius: 5px;
   padding: 30px 30px 30px 30px;
   background-color: #9dc6f2;
 }
@@ -49,6 +48,7 @@ textarea {
 }
 label {
   font-size: 16px;
+  font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .form-group {
@@ -57,6 +57,6 @@ label {
 .container .card {
   margin-top: 10px;
 }
-.form-control{
+.form-control {
   color: white;
 }

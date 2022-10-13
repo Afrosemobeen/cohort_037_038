@@ -4,7 +4,7 @@
       <h3 class="title">UPDATE PURCHASE ORDER</h3>
     </div>
 
-    <div class="card mt-5 col-md-12">
+    <div class="card col-md-12">
       <!-- <form> -->
       <div class="two-col">
         <div class="form-group col1">
@@ -21,7 +21,7 @@
           <label for="description">Description</label>
           <textarea
             type="description"
-            class="form-control"
+            class="form-control input-lg"
             [(ngModel)]="order.desc"
             style="background-color: royalblue"
           ></textarea>
@@ -76,7 +76,11 @@
         </div>
 
         <div class="my-4 col2 text-center">
-          <button type="button" class="btn btn-outline-danger btn-lg mx-3">
+          <button
+            type="button"
+            class="btn btn-outline-danger btn-lg mx-3"
+            (click)="cancelUpdateForm()"
+          >
             Cancel
           </button>
           <button

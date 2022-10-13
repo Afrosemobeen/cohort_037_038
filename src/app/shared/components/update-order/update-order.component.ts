@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-update-order',
@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class UpdateOrderComponent implements OnInit {
   @Input() order: any;
+  @Output() onCancelUpdateEvent: EventEmitter<any>;
 
   po_number: string = '';
   date: string = '';
@@ -15,7 +16,13 @@ export class UpdateOrderComponent implements OnInit {
   desc: string = '';
   state: string = '';
   city: string = '';
-  constructor() {}
+  constructor() {
+    this.onCancelUpdateEvent = new EventEmitter();
+  }
 
   ngOnInit(): void {}
+
+  cancelUpdateForm() {
+    this.onCancelUpdateEvent.emit();
+  }
 }
