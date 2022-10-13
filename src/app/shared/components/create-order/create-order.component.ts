@@ -8,32 +8,23 @@ import { __values } from 'tslib';
   styleUrls: ['./create-order.component.css'],
 })
 export class CreateOrderComponent implements OnInit {
-  po_number: String = '';
+  po_number: any = '';
   date: any;
-  total_amount: Number | undefined;
-  username: String = '';
+  total_amount: string = '';
+  username: string = '';
   desc: string = '';
-  state: String = '';
-  city: String = '';
-
-  constructor(private purchaseOrderSer: PurchaseOrderService) {}
+  state: string = '';
+  city: string = '';
   ponum: any = [];
+  pucharseList = [];
+  constructor(private purchaseOrderSer: PurchaseOrderService) {}
+
   ngOnInit(): void {
     this.ponum = this.purchaseOrderSer.poNumber();
     console.log(this.ponum);
   }
 
   createOrder() {
-    console.log(this.po_number);
-    console.log(this.date);
-    console.log(this.total_amount);
-    console.log(this.username);
-    console.log(this.desc);
-    console.log(this.state);
-    console.log(this.city);
-
-    //console.log('Order Data', orderData);
-
     if (
       !this.po_number ||
       !this.date ||
@@ -45,12 +36,25 @@ export class CreateOrderComponent implements OnInit {
     ) {
       alert('data for some field is missing');
     }
+
+    const orderData = {
+      po_number: this.po_number,
+      date: this.date,
+      total_amount: this.total_amount,
+      username: this.username,
+      desc: this.desc,
+      state: this.state,
+      city: this.city,
+    };
+    console.log('Order Data', orderData);
+    this.purchaseOrderSer.purchaseList().push(orderData);
+    console.log(this.pucharseList);
   }
 
   clearForm() {
     this.po_number = '';
     this.date = '';
-    this.total_amount = undefined;
+    this.total_amount = '';
     this.username = '';
     this.desc = '';
     this.state = '';

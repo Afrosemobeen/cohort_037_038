@@ -9,12 +9,18 @@
       <div class="two-col">
         <div class="form-group col1">
           <label for="po num">Po Number</label>
-          <select class="col1 form-control" style="background-color: royalblue">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="po_number"
+            style="background-color: royalblue"
+          />
+          <!-- <select class="col1 form-control" style="background-color: royalblue">
             <option>Select PO number</option>
             <option *ngFor="let poNumbers of ponum">
               {{ poNumbers.po_num }}
             </option>
-          </select>
+          </select> -->
         </div>
 
         <div class="form-group col2">
@@ -85,7 +91,8 @@
           </button>
           <button
             type="button"
-            class="btn btn-primary btn-lg"
+            class="btn btn-lg"
+            style="background-color: royalblue; color: white"
             (click)="createOrder()"
           >
             Save

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-update-order',
@@ -6,13 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./update-order.component.css'],
 })
 export class UpdateOrderComponent implements OnInit {
-  po_number: String = '';
-  date: any;
-  total_amount: Number | undefined;
-  username: String = '';
+  @Input() order: any;
+
+  po_number: string = '';
+  date: string = '';
+  total_amount: string = '';
+  username: string = '';
   desc: string = '';
-  state: String = '';
-  city: String = '';
+  state: string = '';
+  city: string = '';
   constructor() {}
 
   ngOnInit(): void {}

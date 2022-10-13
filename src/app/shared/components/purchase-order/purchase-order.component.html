@@ -1,5 +1,8 @@
 <div>
-  <app-create-order></app-create-order>
-  <app-display-order></app-display-order>
-  <app-update-order></app-update-order>
+  <app-create-order *ngIf="formFlag === 'create'"></app-create-order>
+  <app-update-order
+    [order]="currEmp"
+    *ngIf="formFlag === 'update'"
+  ></app-update-order>
+  <app-display-order (onOrderEditEvent)="editOrder($event)"></app-display-order>
 </div>

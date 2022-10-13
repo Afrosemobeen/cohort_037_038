@@ -16,15 +16,15 @@
       </thead>
       <tbody>
         <tr *ngFor="let order of purchaseList">
-          <td>{{ order.po_num }}</td>
+          <td>{{ order.po_number }}</td>
           <td>{{ order.date }}</td>
-          <td>{{ order.total_amt }}</td>
-          <td>{{ order.user_name }}</td>
+          <td>{{ order.total_amount }}</td>
+          <td>{{ order.username }}</td>
           <td>{{ order.desc }}</td>
           <td>{{ order.state }}</td>
           <td>{{ order.city }}</td>
           <td>
-            <mat-icon class="icon">create</mat-icon>
+            <mat-icon class="icon" (click)="editOrder(order)">create</mat-icon>
           </td>
         </tr>
       </tbody>
