@@ -38,6 +38,6 @@ import { AddUserComponent } from './components/user-management/add-user/add-user
     Ng2OrderModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
