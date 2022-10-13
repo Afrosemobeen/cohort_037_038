@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -9,12 +10,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginFormComponent implements OnInit {
   loginForm: FormGroup;
-  constructor(private fb: FormBuilder, private http: HttpClient) {
-    this.loginForm = this.fb.group({
-      username: [''],
-      password: [''],
-    });
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) { 
+    this.loginForm =  this.fb.group({
+      email: ['', [Validators.required,Validators.email]],
+      password: ['', [Validators.required]],
+     
+    }
+    );
   }
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 }
