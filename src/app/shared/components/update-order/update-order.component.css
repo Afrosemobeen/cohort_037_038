@@ -57,3 +57,6 @@ label {
 .container .card {
   margin-top: 10px;
 }
+.form-control{
+  color: white;
+}
