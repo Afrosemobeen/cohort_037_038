@@ -49,6 +49,7 @@ textarea {
 }
 label {
   font-size: 16px;
+  font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .form-group {
@@ -57,6 +58,6 @@ label {
 .container .card {
   margin-top: 10px;
 }
-.form-control{
+.form-control {
   color: white;
 }
