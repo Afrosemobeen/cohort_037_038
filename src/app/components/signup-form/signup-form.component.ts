@@ -14,6 +14,8 @@ export class SignupFormComponent implements OnInit {
       password: [''],
     });
   }
-
+  signUp() {
+    console.log(this.signUpForm.value);
+  }
   ngOnInit(): void {}
 }
