@@ -77,4 +77,4 @@ var getAllOrders = function (req, res) {
       city: "Belgaum",
     },
   ];
-  module.exports = {getAllOrders, createOrder, updateOrder};
+  module.exports  =  {getAllOrders, createOrder, updateOrder};
