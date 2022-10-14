@@ -10,19 +10,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule} from '@angular/material/icon'
 import { Ng2OrderModule } from 'ng2-order-pipe';
-
-
+import { CreateUserComponent } from '../user-management/create-user/create-user.component'
+import { EditUserDetailsComponent } from '../user-management/edit-user-details/edit-user-details.component'
 @NgModule({
   declarations: [
     UserOperationsComponent,
     DisplayUserComponent,
-    UsersComponent
+    UsersComponent,
+    CreateUserComponent,
+    EditUserDetailsComponent
   ],
   imports: [
     CommonModule,
     NgbModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    
     FormsModule,
     HttpClientModule,
     MatIconModule,
@@ -31,6 +34,7 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
   ],
   exports: [
      UserOperationsComponent,
+     CreateUserComponent,
     DisplayUserComponent,
      UsersComponent,
     CommonModule,

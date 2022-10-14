@@ -5,7 +5,7 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-edit-user-details',
   templateUrl: './edit-user-details.component.html',
-  styleUrls: ['./edit-user-details.component.css']
+  styleUrls: ['./edit-user-details.component.scss']
 })
 export class EditUserDetailsComponent implements OnInit {
   @Input() name: any;
