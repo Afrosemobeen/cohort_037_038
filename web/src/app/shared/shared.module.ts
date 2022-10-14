@@ -7,8 +7,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from '../app-routing.module';
 import { CreateOrderComponent } from './components/create-order/create-order.component';
-import { UpdateOrderComponent } from './components/update-order/update-order.component';
 import { DisplayOrderComponent } from './components/display-order/display-order.component';
+import { UpdateOrderComponent } from './components/update-order/update-order.component';
 import { PurchaseOrderComponent } from './components/purchase-order/purchase-order.component';
 
 @NgModule({
