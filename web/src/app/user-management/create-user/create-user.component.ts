@@ -33,7 +33,13 @@ export class CreateUserComponent implements OnInit {
            // return 
       
      }
-     
+     departments: any=[
+      {id: 1, name: "Admin"},
+      {id: 2, name: "Supervisor"},
+      {id: 3, name: "Accountant"},
+      {id: 4, name: "Incharge"},
+      {id: 5, name: "User"}
+     ]
 
 
 ngOnInit(): void {

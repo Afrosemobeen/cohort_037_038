@@ -54,12 +54,18 @@
         </div>
         <div class="mb-3">
           <label>Title* :</label>
-          <input
+          <!-- <input
             type="text"
             class="form-control"
             placeholder="Title"
             [formControl]="title"
-          />
+          /> -->
+          <select class="form-control" placeholder="Title"
+          [formControl]="title" >
+            <option *ngFor="let dept of departments" [value]="dept.name">
+              {{dept.name}}
+            </option>
+        </select>
           <div
             *ngIf="(title.dirty || title.touched) && title.invalid"
             style="color: red"
