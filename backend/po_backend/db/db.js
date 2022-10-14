@@ -1,7 +1,9 @@
 var mongoose = require("mongoose");
 var cors = require("cors");
 
-var url = "mongodb://localhost:27017/purchase_db";
+// var url = "mongodb://localhost:27017/purchase_db";
+var url =
+  "mongodb+srv://snehal:snehalrajapurkar@cluster0.tvgmds2.mongodb.net/purchase_db";
 
 mongoose
   .connect(url)
