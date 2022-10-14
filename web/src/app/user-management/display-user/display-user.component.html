@@ -1,41 +1,52 @@
 <!-- <div>
     <app-users></app-users>
 </div> -->
-<br>
+<br />
 <div>
-    
-   <div>
-        <table class="table  table-sm table-hover ">
-            <thead class="bg-primary">
-                <tr>
-                    <!-- <th>ID</th> -->
-                    <th (click)="sort('fullName')">Full Name</th>
-                    <th (click)="sort('displayName')">Display NameName</th>
-                    <th (click)="sort('title')">Title</th>
-                    <th (click)="sort('userLevel')">UserLevel</th>
-                    <th (click)="sort('email')">Email</th>
-                    <th (click)="sort('phone')">Phone</th>
-                    <th (click)="sort('status')">Status</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let user of userService.usersList | orderBy: key: reverse ">
-                    <!-- <td>{{user._id}}</td> -->
-                    <td>{{user.fullName}}</td>
-                    <td>{{user.displayName}}</td>
-                    <td>{{user.title}}</td>
-                    <td>{{user.userLevel}}</td>
-                    <td>{{user.email}}</td>
-                    <td>{{user.phone}}</td>
-                    <td>{{user.status}}</td>
-                    <td>
-                     <!-- <mat-icon class="btn btn-danger"(click)="deleteEmployee(user._id)" >Delete</mat-icon> -->
-                     <mat-icon (click)="editUsers(user)">create</mat-icon>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+  <div>
+    <table class="table table-sm table-hover">
+      <thead class="bg-primary">
+        <tr>
+          <!-- <th>ID</th> -->
+          <th (click)="sort('fullName')">
+            Full Name
+            <i class="bi bi-funnel-fill"></i>
+          </th>
+          <th (click)="sort('displayName')">
+            Display Name
+            <i class="bi bi-funnel-fill"></i>
+          </th>
+          <th (click)="sort('title')">Title</th>
+          <th (click)="sort('userLevel')">User Level</th>
+          <th (click)="sort('email')">Email</th>
+          <th (click)="sort('phone')">Phone</th>
+          <th (click)="sort('status')">Status</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userService.usersList | orderBy: key:reverse">
+          <!-- <td>{{user._id}}</td> -->
+          <td>{{ user.fullName }}</td>
+          <td>{{ user.displayName }}</td>
+          <td>{{ user.title }}</td>
+          <td>{{ user.userLevel }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.status }}</td>
+          <td>
+            <i class="bi bi-pencil-square" (click)="editUsers(user)"></i>
+          </td>
+          <td>
+            <i
+              class="bi bi-trash"
+              (click)="deleteEmployee(user._id)"
+              style="color: #f73636"
+            ></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-

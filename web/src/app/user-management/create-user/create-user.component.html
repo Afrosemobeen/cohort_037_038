@@ -1,92 +1,171 @@
 <div class="modal-header">
-    
-    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
-  </div>
-  <div class="modal-body">
-    <div class="container">
-    
-        <div class="col-md-6">
-            
-                <div>
-                    <div>
-                        <label >Full Name* :</label>
-                            <input type="text" class="form-control" placeholder="Full Name" [formControl]="fullName">
-                            <div
-                            *ngIf="(fullName.dirty ||fullName.touched) && fullName.invalid" style="color: red">
-                              <p *ngIf="fullName.hasError('required')">*Please fill this is mandatory field </p>
-                              <p *ngIf="fullName.hasError('maxlength')">*It should not exceed more than 50 characters.</p>
-                            </div>
-                        </div>
-                    <div>
-                        <label >Display Name* :</label>
-                            <input type="text" class="form-control" placeholder="Display Name" [formControl]="displayName">
-                            <div
-                            *ngIf="(displayName.dirty ||displayName.touched) && displayName.invalid" style="color: red">
-                              <p *ngIf="displayName.hasError('required')">*Please fill this is mandatory field </p>
-                              <p *ngIf="displayName.hasError('maxlength')">*It should not exceed more than 50 characters</p>
-                              </div>
-    
-                    </div>
-                    <div>
-                        <label >Title* :</label>
-                            <input type="text" class="form-control" placeholder="Title" [formControl]="title">
-                            <div
-                            *ngIf="(title.dirty ||title.touched) && title.invalid" style="color: red">
-                              <p *ngIf="title.hasError('required')">*Please fill this is mandatory field </p>
-                            </div>
-                    </div>
-                    <div>
-                        <label >UserLevel* :</label>
-                            <input type="text" class="form-control" placeholder="User Level" [formControl]="userLevel">
-                            <div
-                            *ngIf="(userLevel.dirty ||userLevel.touched) && userLevel.invalid" style="color: red">
-                              <p *ngIf="userLevel.hasError('required')">*Please fill this is mandatory field </p>
-    
-                            </div>
-                            
-                    </div>
-                    <div>
-                        <label >Email* :</label>
-                            <input type="text" class="form-control"  placeholder="Email" [formControl]="email">
-                            <div
-                            *ngIf="(email.dirty ||email.touched) && email.invalid" style="color: red">
-                              <p *ngIf="email.hasError('required')">*Please fill this is mandatory field </p>
-                              <p *ngIf="email.hasError('email')">*Please enter valid email </p>
-                            </div>
-                            
-                    </div>
-                    <div>
-                        <label >Phone* :</label>
-                            <input type="text" class="form-control" placeholder="Phone" [formControl]="phone">
-                            <div
-                            *ngIf="(phone.dirty ||phone.touched) &&phone.invalid" style="color: red">
-                              <p *ngIf="phone.hasError('required')">*Please fill this is mandatory field </p>
-                              <p *ngIf="phone.hasError('maxlength')">*Please enter valid phone number </p>
-                            </div>
-                            
-                    </div>
-                    <div>
-                        <label >status* :</label>
-                            <input type="text" class="form-control" placeholder="Status" [formControl]="status">
-                            <div
-                            *ngIf="(status.dirty ||status.touched) && status.invalid" style="color: red">
-                              <p *ngIf="status.hasError('required')">*Please fill this is mandatory field </p>
-    
-                            </div>
-                            
-                    </div>
-                     <!-- <div class="my-4 text-center">
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  ></button>
+</div>
+<div class="modal-body">
+  <div class="container">
+    <div class="col-md-12">
+      <div>
+        <div class="mb-3">
+          <label>Full Name* :</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Full Name"
+            [formControl]="fullName"
+          />
+          <div
+            *ngIf="(fullName.dirty || fullName.touched) && fullName.invalid"
+            style="color: red"
+          >
+            <p *ngIf="fullName.hasError('required')">
+              *Please fill this is mandatory field
+            </p>
+            <p *ngIf="fullName.hasError('maxlength')">
+              *It should not exceed more than 50 characters.
+            </p>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label>Display Name* :</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Display Name"
+            [formControl]="displayName"
+          />
+          <div
+            *ngIf="
+              (displayName.dirty || displayName.touched) && displayName.invalid
+            "
+            style="color: red"
+          >
+            <p *ngIf="displayName.hasError('required')">
+              *Please fill this is mandatory field
+            </p>
+            <p *ngIf="displayName.hasError('maxlength')">
+              *It should not exceed more than 50 characters
+            </p>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label>Title* :</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Title"
+            [formControl]="title"
+          />
+          <div
+            *ngIf="(title.dirty || title.touched) && title.invalid"
+            style="color: red"
+          >
+            <p *ngIf="title.hasError('required')">
+              *Please fill this is mandatory field
+            </p>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label>User Level* :</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="User Level"
+            [formControl]="userLevel"
+          />
+          <div
+            *ngIf="(userLevel.dirty || userLevel.touched) && userLevel.invalid"
+            style="color: red"
+          >
+            <p *ngIf="userLevel.hasError('required')">
+              *Please fill this is mandatory field
+            </p>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label>Email* :</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Email"
+            [formControl]="email"
+          />
+          <div
+            *ngIf="(email.dirty || email.touched) && email.invalid"
+            style="color: red"
+          >
+            <p *ngIf="email.hasError('required')">
+              *Please fill this is mandatory field
+            </p>
+            <p *ngIf="email.hasError('email')">*Please enter valid email</p>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label>Phone* :</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Phone"
+            [formControl]="phone"
+          />
+          <div
+            *ngIf="(phone.dirty || phone.touched) && phone.invalid"
+            style="color: red"
+          >
+            <p *ngIf="phone.hasError('required')">
+              *Please fill this is mandatory field
+            </p>
+            <p *ngIf="phone.hasError('maxlength')">
+              *Please enter valid phone number
+            </p>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label>Status* :</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Status"
+            [formControl]="status"
+          />
+          <div
+            *ngIf="(status.dirty || status.touched) && status.invalid"
+            style="color: red"
+          >
+            <p *ngIf="status.hasError('required')">
+              *Please fill this is mandatory field
+            </p>
+          </div>
+        </div>
+        <!-- <div class="my-4 text-center">
                         <button class="btn btn-primary mx-4" 
                                 (click)="saveUser()" [mat-dialog-close] [disabled]="fullName.invalid||displayName.invalid||title.invalid || userLevel.invalid|| phone.invalid || email.invalid || status.invalid"> save</button>
                         <button class="btn btn-primary"
                                 (click)="clearForm()" [mat-dialog-close]> Clear</button>
                     </div>  -->
-                </div>
-            
-        </div>
+      </div>
     </div>
   </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')" (click)="saveUser()">save</button>
-    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')" (click)="clearForm()">clear</button>
-  </div>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="activeModal.close('Close click')"
+    (click)="saveUser()"
+  >
+    Save
+  </button>
+  <button
+    type="button"
+    class="btn btn-secondary"
+    (click)="activeModal.close('Close click')"
+    (click)="clearForm()"
+  >
+    Cancel
+  </button>
+</div>
