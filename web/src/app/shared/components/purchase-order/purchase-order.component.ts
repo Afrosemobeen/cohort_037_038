@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PurchaseOrderService } from 'src/app/services/purchase-order.service';
 
 @Component({
   selector: 'app-purchase-order',
@@ -8,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 export class PurchaseOrderComponent implements OnInit {
   formFlag: string = 'create';
   currEmp: any = {};
-  constructor() {}
+  constructor(private purchaseOrderSer: PurchaseOrderService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.purchaseOrderSer.getAllOrders().subscribe({
+      next: (data: any) => {
+        console.log('data: ', data);
+        this.purchaseOrderSer.orderList = data;
+      },
+      error: () => {},
+      complete: () => {},
+    });
+  }
 
   editOrder(order: any) {
     console.log(order);

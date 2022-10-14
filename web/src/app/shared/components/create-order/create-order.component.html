@@ -9,13 +9,13 @@
         <div class="form-group col1">
           <i class="icon fa-solid fa-chevron-down"></i>
           <label form="poNum">Po Number</label>
-          <!-- <input
+          <input
             type="text"
             class="form-control"
-            [(ngModel)]="po_number"
+            [(ngModel)]="po_num"
             style="background-color: royalblue"
-          /> -->
-          <select
+          />
+          <!-- <select
             id="poNum"
             class="col1 form-control"
             style="background-color: royalblue"
@@ -24,7 +24,7 @@
             <option *ngFor="let poNumbers of ponum">
               {{ poNumbers.po_num }}
             </option>
-          </select>
+          </select> -->
         </div>
 
         <div class="form-group col2">
@@ -66,7 +66,7 @@
             type="text"
             placeholder="Total amount"
             class="form-control"
-            [(ngModel)]="total_amount"
+            [(ngModel)]="total_amt"
             style="background-color: royalblue"
           />
         </div>
