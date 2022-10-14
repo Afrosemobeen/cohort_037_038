@@ -114,6 +114,7 @@
     }
   },
   "cli": {
+    "analytics": false
 <<<<<<< HEAD:angular.json
     "analytics": "21afea3b-65d0-49d6-8eb7-cf0022074c33"
 =======
