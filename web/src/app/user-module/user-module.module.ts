@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserOperationsComponent } from '../user-management/user-operations/user-operations.component';
 import { DisplayUserComponent } from '../user-management/display-user/display-user.component';
-import { UsersComponent } from '../user-management/users/users.component';
+ import { UsersComponent } from '../user-management/users/users.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -30,9 +30,9 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
     Ng2OrderModule
   ],
   exports: [
-    UserOperationsComponent,
+     UserOperationsComponent,
     DisplayUserComponent,
-    UsersComponent,
+     UsersComponent,
     CommonModule,
     NgbModule,
     BrowserAnimationsModule,
