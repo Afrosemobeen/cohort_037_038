@@ -17,11 +17,9 @@ app.get("/getallorders", function (req, res) {
   res.send(orderList);
 });
 
-
 app.post("/createorder", function (req, res) {
-
   console.log("From create order service");
-  
+
   // console.log(req);
   const { body, params, query } = req; //object destructuring
   console.log("body: ", body);
@@ -48,47 +46,47 @@ app.listen(5000, function (err) {
     return;
   }
   if (!err) {
-    console.log(" Purchase order Application started successfully and listening on port 5000");
+    console.log(
+      " Purchase order Application started successfully and listening on port 5000"
+    );
   }
 });
 
 var orderList = [
   {
-    po_num: 'po123',
-    date: '22 / 10 / 2011',
+    po_num: "po123",
+    date: "22 / 10 / 2011",
     total_amt: 12000,
-    user_name: 'Snehal',
-    desc: 'I am snehal',
-    state: 'Karnataka',
-    city: 'Belgaum',
+    user_name: "Snehal",
+    desc: "I am snehal",
+    state: "Karnataka",
+    city: "Belgaum",
   },
   {
-    po_num: 'po456',
-    date: '21 / 15 / 2011',
+    po_num: "po456",
+    date: "21 / 15 / 2011",
     total_amt: 12500,
-    user_name: 'Pranay',
-    desc: 'I am Pranay',
-    state: 'Maharashtra',
-    city: 'Mumbai',
+    user_name: "Pranay",
+    desc: "I am Pranay",
+    state: "Maharashtra",
+    city: "Mumbai",
   },
   {
-    po_num: 'po789',
-    date: '22 / 09 / 2022',
+    po_num: "po789",
+    date: "22 / 09 / 2022",
     total_amt: 23000,
-    user_name: 'Ganesh',
-    desc: 'I am Ganesh',
-    state: 'Karnataka',
-    city: 'Dharwad',
+    user_name: "Ganesh",
+    desc: "I am Ganesh",
+    state: "Karnataka",
+    city: "Dharwad",
   },
   {
-    po_num: 'po563',
-    date: '15 / 10 / 2016',
+    po_num: "po563",
+    date: "15 / 10 / 2016",
     total_amt: 52000,
-    user_name: 'Sarthak',
-    desc: 'I am Sarthak',
-    state: 'Karnataka',
-    city: 'Belgaum',
+    user_name: "Sarthak",
+    desc: "I am Sarthak",
+    state: "Karnataka",
+    city: "Belgaum",
   },
 ];
-
-
