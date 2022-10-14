@@ -6,6 +6,8 @@ var app = express();
 
 app.use(express.json());
 
+var mongoose = require("../po_backend/db/db");
+
 //step 4- developing services
 app.get("/", function (req, res) {
   console.log(req);
@@ -26,4 +28,3 @@ app.listen(5000, function (err) {
     );
   }
 });
-
