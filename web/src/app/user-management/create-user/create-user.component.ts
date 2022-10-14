@@ -38,7 +38,17 @@ export class CreateUserComponent implements OnInit {
       {id: 2, name: "Supervisor"},
       {id: 3, name: "Accountant"},
       {id: 4, name: "Incharge"},
-      {id: 5, name: "User"}
+      {id: 5, name: "User"},
+      {id: 6, name: "Actor"}
+     ]
+     position: any=[
+      {id: 1, name: "Admin"},
+      {id: 2, name: "Accountant"},
+      {id: 5, name: "Expert"},
+      {id: 3, name: "Doctor"},
+      {id: 4, name: "Principal"},
+      {id: 5, name: "Incharge"},
+      {id: 6, name: "User"}
      ]
 
 

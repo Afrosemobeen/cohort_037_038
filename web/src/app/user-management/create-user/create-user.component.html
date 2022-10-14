@@ -60,12 +60,15 @@
             placeholder="Title"
             [formControl]="title"
           /> -->
-          <select class="form-control" placeholder="Title"
-          [formControl]="title" >
+          <select
+            class="form-control"
+            placeholder="Title"
+            [formControl]="title"
+          >
             <option *ngFor="let dept of departments" [value]="dept.name">
-              {{dept.name}}
+              {{ dept.name }}
             </option>
-        </select>
+          </select>
           <div
             *ngIf="(title.dirty || title.touched) && title.invalid"
             style="color: red"
@@ -77,12 +80,21 @@
         </div>
         <div class="mb-3">
           <label>User Level* :</label>
-          <input
+          <select
+            class="form-control"
+            placeholder="User Level"
+            [formControl]="userLevel"
+          >
+            <option *ngFor="let pos of position" [value]="pos.name">
+              {{ pos.name }}
+            </option>
+          </select>
+          <!-- <input
             type="text"
             class="form-control"
             placeholder="User Level"
             [formControl]="userLevel"
-          />
+          /> -->
           <div
             *ngIf="(userLevel.dirty || userLevel.touched) && userLevel.invalid"
             style="color: red"
