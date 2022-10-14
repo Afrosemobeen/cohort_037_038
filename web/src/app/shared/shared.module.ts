@@ -10,6 +10,7 @@ import { CreateOrderComponent } from './components/create-order/create-order.com
 import { DisplayOrderComponent } from './components/display-order/display-order.component';
 import { UpdateOrderComponent } from './components/update-order/update-order.component';
 import { PurchaseOrderComponent } from './components/purchase-order/purchase-order.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PurchaseOrderComponent } from './components/purchase-order/purchase-ord
     MatIconModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   exports: [PurchaseOrderComponent],
 })

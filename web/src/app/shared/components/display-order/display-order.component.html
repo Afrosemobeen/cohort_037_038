@@ -48,9 +48,9 @@
           <th>Actions</th>
         </tr>
       </thead>
-      <tbody>
-        <tr *ngFor="let order of orderList">
-          <td>{{ order.po_num}}</td>
+      <tbody *ngIf="orderList.length > 0">
+        <tr *ngFor="let order of purchaseOrderSer.orderList">
+          <td>{{ order.po_num }}</td>
           <td>{{ order.date }}</td>
           <td>{{ order.total_amt }}</td>
           <td>{{ order.username }}</td>

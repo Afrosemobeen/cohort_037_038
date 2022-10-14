@@ -23,8 +23,8 @@ export class UpdateOrderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ponum = this.purchaseOrderSer.poNumber();
-    console.log(this.ponum);
+    // this.ponum = this.purchaseOrderSer.poNumber();
+    // console.log(this.ponum);
   }
 
   cancelUpdateForm() {
