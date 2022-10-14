@@ -8,13 +8,26 @@ import { PurchaseOrderService } from 'src/app/services/purchase-order.service';
 })
 export class DisplayOrderComponent implements OnInit {
   @Output() onOrderEditEvent: EventEmitter<any>;
-  purchaseList: any = [];
+
+  orderList: any;
   constructor(private purchaseOrderSer: PurchaseOrderService) {
     this.onOrderEditEvent = new EventEmitter();
   }
 
   ngOnInit(): void {
-    this.purchaseList = this.purchaseOrderSer.purchaseList();
+    
+    this.purchaseOrderSer.getAllOrders()
+    .subscribe({
+      next: (data: any)=>{
+        console.log("data: ", data);
+        this.purchaseOrderSer.orderList = data;
+        this.orderList = data        
+      },
+      error : ()=>{},
+      complete: ()=>{}
+    })
+    
+    
   }
 
   editOrder(order: any) {

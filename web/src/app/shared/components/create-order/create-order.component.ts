@@ -24,40 +24,77 @@ export class CreateOrderComponent implements OnInit {
     console.log(this.ponum);
   }
 
-  createOrder() {
-    if (
-      !this.po_number ||
-      !this.date ||
-      !this.total_amount ||
-      !this.username ||
-      !this.desc ||
-      !this.state ||
-      !this.city
-    ) {
-      alert('data for some field is missing');
+ 
+    createOrder() {
+      console.log("ponumber: ", this.po_number);
+      console.log("date: ", this.date);
+      console.log("total: ", this.total_amount);
+      console.log("user: ", this.username);
+      console.log("description: ", this.desc);
+      console.log("state: ", this.state);
+      console.log("city: ", this.city);
+      
+  
+  
+      if (
+        !this.po_number ||
+        !this.date ||
+        !this.total_amount ||
+        !this.username ||
+        !this.desc ||
+        !this.state ||
+        !this.city
+      ) {
+        alert('data for some field is missing');
+      }
+  
+      const orders = {
+        po_number: this.po_number,
+        date: this.date,
+        total_amount: this.total_amount,
+        username: this.username,
+        desc: this.desc,
+        state: this.state,
+        city: this.city
+      } 
+  
+      
+      this.purchaseOrderSer.createOrder(orders)
+      .subscribe({
+        next: (result: any)=>{
+          console.log("result: ", result);
+          this.clearForm()
+          this.purchaseOrderSer.getAllOrders()
+          .subscribe({
+            next: (data: any)=> {
+              console.log("data: ", data);
+              this.purchaseOrderSer.orderList =data;
+              
+            },
+            error : ()=>{},
+            complete: ()=>{}
+          })
+        },
+        error : ()=>{},
+        complete: ()=>{}
+      })
+        
+          
+        
+      
+     
     }
-
-    const orderData = {
-      po_number: this.po_number,
-      date: this.date,
-      total_amount: this.total_amount,
-      username: this.username,
-      desc: this.desc,
-      state: this.state,
-      city: this.city,
-    };
-    console.log('Order Data', orderData);
-    this.purchaseOrderSer.purchaseList().push(orderData);
-    console.log(this.pucharseList);
+  
+  
+    clearForm() {
+      this.po_number = '';
+      this.date = '';
+      this.total_amount = '';
+      this.username = '';
+      this.desc = '';
+      this.state = '';
+      this.city = '';
+    }
   }
 
-  clearForm() {
-    this.po_number = '';
-    this.date = '';
-    this.total_amount = '';
-    this.username = '';
-    this.desc = '';
-    this.state = '';
-    this.city = '';
-  }
-}
+
