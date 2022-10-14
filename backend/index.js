@@ -12,12 +12,12 @@ app.get("/", function (req, res) {
   res.send("Welcome to orders application");
 });
 
-app.get("/getallorders", function (req, res) {
+app.get("/orders", function (req, res) {
   console.log("I am from getallorders");
   res.send(orderList);
 });
 
-app.post("/createorder", function (req, res) {
+app.post("/orders", function (req, res) {
   console.log("From create order service");
 
   // console.log(req);
@@ -37,7 +37,8 @@ app.post("/createorder", function (req, res) {
   console.log("new order saved successfully");
   res.send(body);
 });
-app.put("/updateOrder/:po_num", function (req, res) {
+
+app.put("/orders/:po_num", function (req, res) {
   console.log("I am from updateOrder");
   const { body, params, query } = req; //object destructuring
   console.log("body: ", body);
@@ -46,7 +47,7 @@ app.put("/updateOrder/:po_num", function (req, res) {
   let orderIndex = orderList.findIndex((ele) => ele.po_num == params.po_num);
   console.log("orderIndex: ", orderIndex);
   orderList.splice(orderIndex, 1, body);
-  
+
   res.send("Record updated successfully.");
 });
 //step 3- register aplication with port
@@ -65,7 +66,7 @@ app.listen(5000, function (err) {
 
 var orderList = [
   {
-    po_num: "po123",
+    po_num: "100",
     date: "22 / 10 / 2011",
     total_amt: 12000,
     user_name: "Snehal",
@@ -74,7 +75,7 @@ var orderList = [
     city: "Belgaum",
   },
   {
-    po_num: "po456",
+    po_num: "101",
     date: "21 / 15 / 2011",
     total_amt: 12500,
     user_name: "Pranay",
@@ -83,7 +84,7 @@ var orderList = [
     city: "Mumbai",
   },
   {
-    po_num: "po789",
+    po_num: "102",
     date: "22 / 09 / 2022",
     total_amt: 23000,
     user_name: "Ganesh",
@@ -92,7 +93,7 @@ var orderList = [
     city: "Dharwad",
   },
   {
-    po_num: "po563",
+    po_num: "103",
     date: "15 / 10 / 2016",
     total_amt: 52000,
     user_name: "Sarthak",
