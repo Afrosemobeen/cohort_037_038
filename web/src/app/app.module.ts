@@ -10,11 +10,15 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { MatDialogModule } from '@angular/material/dialog';
 // import { MatIconModule} from '@angular/material/icon'
 import { HttpClientModule } from '@angular/common/http';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { SignupFormComponent } from './components/signup-form/signup-form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginFormComponent,
+    SignupFormComponent,
    
   ],
   imports: [
