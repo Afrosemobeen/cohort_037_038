@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SignupFormComponent implements OnInit {
   signUpForm: FormGroup;
+
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.signUpForm = this.fb.group({
       username: [
