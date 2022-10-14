@@ -39,7 +39,18 @@ app.post("/createorder", function (req, res) {
   console.log("new order saved successfully");
   res.send(body);
 });
-
+app.put("/updateOrder/:po_num", function (req, res) {
+  console.log("I am from updateOrder");
+  const { body, params, query } = req; //object destructuring
+  console.log("body: ", body);
+  console.log("params: ", params);
+  console.log("query: ", query);
+  let orderIndex = orderList.findIndex((ele) => ele.po_num == params.po_num);
+  console.log("orderIndex: ", orderIndex);
+  orderList.splice(orderIndex, 1, body);
+  
+  res.send("Record updated successfully.");
+});
 //step 3- register aplication with port
 app.listen(5000, function (err) {
   if (err) {
