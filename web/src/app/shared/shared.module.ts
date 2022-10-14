@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedRoutingModule } from './shared-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from '../app-routing.module';
@@ -25,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     SharedRoutingModule,
     NgbModule,
     FormsModule,
+    ReactiveFormsModule,
     MatIconModule,
     BrowserAnimationsModule,
     AppRoutingModule,

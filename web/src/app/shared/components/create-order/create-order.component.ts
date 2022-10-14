@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { PurchaseOrderService } from 'src/app/services/purchase-order.service';
 import { __values } from 'tslib';
 
@@ -8,61 +9,28 @@ import { __values } from 'tslib';
   styleUrls: ['./create-order.component.css'],
 })
 export class CreateOrderComponent implements OnInit {
-  po_num: String = '';
-  date: String = '';
-  total_amt: string = '';
-  username: string = '';
-  desc: string = '';
-  state: string = '';
-  city: string = '';
-  // ponum: any = [];
+  orderForm = this.purchaseOrderSer.getOrderFormData();
 
   constructor(private purchaseOrderSer: PurchaseOrderService) {}
 
-  ngOnInit(): void {
-    // this.ponum = this.purchaseOrderSer.poNumber();
-    // console.log(this.ponum);
-  }
+  ngOnInit(): void {}
 
   createOrder() {
-    console.log('ponumber: ', this.po_num);
-    console.log('date: ', this.date);
-    console.log('total: ', this.total_amt);
-    console.log('user: ', this.username);
-    console.log('description: ', this.desc);
-    console.log('state: ', this.state);
-    console.log('city: ', this.city);
+    console.log('orderForm:', this.orderForm.value);
 
-    if (
-      !this.po_num ||
-      !this.date ||
-      !this.total_amt ||
-      !this.username ||
-      !this.desc ||
-      !this.state ||
-      !this.city
-    ) {
-      alert('data for some field is missing');
+    if (!this.orderForm.valid) {
+      alert('data are missing in some fields');
+      return;
     }
-
-    const orders = {
-      po_num: this.po_num,
-      date: this.date,
-      total_amt: this.total_amt,
-      username: this.username,
-      desc: this.desc,
-      state: this.state,
-      city: this.city,
+    const order = {
+      ...this.orderForm.value,
     };
-    console.log('orders: ', orders);
-
-    this.purchaseOrderSer.createOrder(orders).subscribe({
-      next: (result) => {
-        console.log('result: ', result);
+    this.purchaseOrderSer.createOrder(order).subscribe({
+      next: (result: any) => {
         this.clearForm();
         this.purchaseOrderSer.getAllOrders().subscribe({
           next: (data: any) => {
-            console.log('data: ', data);
+            console.log('data:', data);
             this.purchaseOrderSer.orderList = data;
           },
           error: () => {},
@@ -75,12 +43,6 @@ export class CreateOrderComponent implements OnInit {
   }
 
   clearForm() {
-    this.po_num = '';
-    this.date = '';
-    this.total_amt = '';
-    this.username = '';
-    this.desc = '';
-    this.state = '';
-    this.city = '';
+    this.orderForm.reset();
   }
 }
