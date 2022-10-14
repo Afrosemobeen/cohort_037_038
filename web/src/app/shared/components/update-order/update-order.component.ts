@@ -10,9 +10,9 @@ export class UpdateOrderComponent implements OnInit {
   @Input() order: any;
   @Output() onCancelUpdateEvent: EventEmitter<any>;
 
-  po_number: string = '';
+  po_num: string = '';
   date: string = '';
-  total_amount: string = '';
+  total_amt: string = '';
   username: string = '';
   desc: string = '';
   state: string = '';
