@@ -1,9 +1,9 @@
-var getAllOrders = function (req, res) {
+  exports.getAllOrders = function (req, res) {
     console.log("I am from getallorders");
     res.send(orderList);
   }
 
-  var createOrder = function (req, res) {
+  exports.createOrder = function (req, res) {
     console.log("From create order service");
   
     // console.log(req);
@@ -25,7 +25,7 @@ var getAllOrders = function (req, res) {
   }
 
 
-  var updateOrder = function (req, res) {
+  exports.updateOrder = function (req, res) {
     console.log("I am from updateOrder");
     const { body, params, query } = req; //object destructuring
     console.log("body: ", body);
@@ -77,4 +77,4 @@ var getAllOrders = function (req, res) {
       city: "Belgaum",
     },
   ];
-  module.exports = {getAllOrders, createOrder, updateOrder};
+ 
