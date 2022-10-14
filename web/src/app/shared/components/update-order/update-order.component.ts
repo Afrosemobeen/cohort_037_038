@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { PurchaseOrderService } from 'src/app/services/purchase-order.service';
 
 @Component({
@@ -10,26 +10,25 @@ export class UpdateOrderComponent implements OnInit {
   @Input() order: any;
   @Output() onCancelUpdateEvent: EventEmitter<any>;
 
-  po_num: string = '';
-  date: string = '';
-  total_amt: string = '';
-  username: string = '';
-  desc: string = '';
-  state: string = '';
-  city: string = '';
-  ponum: any = [];
+  orderForm = this.purchaseOrderSer.getOrderFormData();
   constructor(private purchaseOrderSer: PurchaseOrderService) {
     this.onCancelUpdateEvent = new EventEmitter();
   }
 
   ngOnInit(): void {
-    // this.ponum = this.purchaseOrderSer.poNumber();
-    // console.log(this.ponum);
+    this.orderForm.setValue({ ...this.order });
   }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('Changes: ', changes);
+    console.log('Changes: ', changes['order'].currentValue);
+    this.orderForm.setValue({ ...changes['order'].currentValue });
+  }
+  
   updateOrder() {
-    console.log('order: ', this.order);
-    this.purchaseOrderSer.updateOrder(this.order).subscribe({
-      next: (result) => {
+    console.log('order: ', this.orderForm.value);
+    this.purchaseOrderSer.updateOrder(this.orderForm.value).subscribe({
+      next: (result: any) => {
         console.log('Result: ', result);
 
         this.purchaseOrderSer.getAllOrders().subscribe({
@@ -45,7 +44,9 @@ export class UpdateOrderComponent implements OnInit {
       error: () => {},
       complete: () => {},
     });
+    
   }
+
   cancelUpdateForm() {
     this.onCancelUpdateEvent.emit();
   }

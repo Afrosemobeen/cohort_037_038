@@ -22,6 +22,7 @@ export class PurchaseOrderService {
 
   getOrderFormData() {
     return this.fbSer.group({
+      _id: [''],
       po_num: ['', [Validators.required]],
       desc: ['', [Validators.required]],
       date: ['', [Validators.required]],
