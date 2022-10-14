@@ -26,7 +26,26 @@ export class UpdateOrderComponent implements OnInit {
     // this.ponum = this.purchaseOrderSer.poNumber();
     // console.log(this.ponum);
   }
+  updateOrder() {
+    console.log('order: ', this.order);
+    this.purchaseOrderSer.updateOrder(this.order).subscribe({
+      next: (result) => {
+        console.log('Result: ', result);
 
+        this.purchaseOrderSer.getAllOrders().subscribe({
+          next: (data: any) => {
+            console.log('data', data);
+            this.purchaseOrderSer.orderList = data;
+            this.cancelUpdateForm();
+          },
+          error: () => {},
+          complete: () => {},
+        });
+      },
+      error: () => {},
+      complete: () => {},
+    });
+  }
   cancelUpdateForm() {
     this.onCancelUpdateEvent.emit();
   }
