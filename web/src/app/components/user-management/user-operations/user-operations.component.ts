@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { UserServiceService } from 'src/app/services/user-service.service';
+import { UserServiceService } from '../../../../../src/app/services/user-service.service';
 import { EditUserComponent } from '../edit-user/edit-user.component';
 
 @Component({

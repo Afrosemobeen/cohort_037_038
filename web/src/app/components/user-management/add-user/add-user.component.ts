@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { UserServiceService } from 'src/app/services/user-service.service';
+import { UserServiceService } from '../../../../../src/app/services/user-service.service';
 
 @Component({
   selector: 'app-add-user',

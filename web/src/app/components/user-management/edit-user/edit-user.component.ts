@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { UserServiceService } from 'src/app/services/user-service.service';
+import { UserServiceService } from '../../../../../src/app/services/user-service.service';
 @Component({
   selector: 'app-edit-user',
   templateUrl: './edit-user.component.html',

@@ -19,11 +19,12 @@ import { AddUserComponent } from './components/user-management/add-user/add-user
 @NgModule({
   declarations: [
     AppComponent,
+    AddUserComponent,
     UsersComponent,
     EditUserComponent,
     DisplayUserComponent,
     UserOperationsComponent,
-    AddUserComponent,
+    
   ],
   imports: [
     BrowserModule,
