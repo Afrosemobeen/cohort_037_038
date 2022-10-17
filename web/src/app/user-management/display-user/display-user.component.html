@@ -4,7 +4,7 @@
 <br />
 <div>
   <div>
-    <table class="table table-sm table-hover">
+    <table class="table table-sm table-hover ">
       <thead class="bg-primary">
         <tr>
           <!-- <th>ID</th> -->
@@ -22,10 +22,10 @@
           <th (click)="sort('phone')">Phone</th>
           <th (click)="sort('status')">Status</th>
           <th></th>
-          <th></th>
+          <!-- <th></th> -->
         </tr>
       </thead>
-      <tbody>
+      <tbody >
         <tr *ngFor="let user of userService.usersList | orderBy: key:reverse">
           <!-- <td>{{user._id}}</td> -->
           <td>{{ user.fullName }}</td>
@@ -38,13 +38,13 @@
           <td>
             <i class="bi bi-pencil-square" (click)="editUsers(user)"></i>
           </td>
-          <td>
+          <!-- <td>
             <i
               class="bi bi-trash"
               (click)="deleteEmployee(user._id)"
               style="color: #f73636"
             ></i>
-          </td>
+          </td> -->
         </tr>
       </tbody>
     </table>
