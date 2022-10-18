@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { PurchaseOrderService } from 'src/app/services/purchase-order.service';
 
 @Component({
@@ -9,6 +16,7 @@ import { PurchaseOrderService } from 'src/app/services/purchase-order.service';
 export class UpdateOrderComponent implements OnInit {
   @Input() order: any;
   @Output() onCancelUpdateEvent: EventEmitter<any>;
+  ponum: any = [];
 
   orderForm = this.purchaseOrderSer.getOrderFormData();
   constructor(private purchaseOrderSer: PurchaseOrderService) {
@@ -17,6 +25,8 @@ export class UpdateOrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.orderForm.setValue({ ...this.order });
+    this.ponum = this.purchaseOrderSer.poNumber();
+    console.log(this.ponum);
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -24,7 +34,7 @@ export class UpdateOrderComponent implements OnInit {
     console.log('Changes: ', changes['order'].currentValue);
     this.orderForm.setValue({ ...changes['order'].currentValue });
   }
-  
+
   updateOrder() {
     console.log('order: ', this.orderForm.value);
     this.purchaseOrderSer.updateOrder(this.orderForm.value).subscribe({
@@ -44,7 +54,6 @@ export class UpdateOrderComponent implements OnInit {
       error: () => {},
       complete: () => {},
     });
-    
   }
 
   cancelUpdateForm() {
