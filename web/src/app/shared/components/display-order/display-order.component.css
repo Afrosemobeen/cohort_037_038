@@ -1,18 +1,13 @@
 body {
-  /* display: flex; */
-  align-items: center;
-  justify-content: center;
   background-color: #9dc6f2;
 }
 .container {
-  position: relative;
-   max-width: 1500px; 
-  /* width: 100%; */
   padding: 30px 30px 30px 30px;
-  background-color: #9dc6f2;
-  margin: 0px;
 }
 
+table {
+  width: 100%;
+}
 h3 {
   text-align: center;
   padding: 10px;
