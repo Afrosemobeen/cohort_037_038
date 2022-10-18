@@ -33,4 +33,13 @@ export class PurchaseOrderService {
       username: ['', [Validators.required]],
     });
   }
+
+  poNumber() {
+    return [
+      { po_num: 'PO1234' },
+      { po_num: 'PO4562' },
+      { po_num: 'PO7859' },
+      { po_num: 'PO7856' },
+    ];
+  }
 }
