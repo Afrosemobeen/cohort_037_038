@@ -64,3 +64,8 @@ label {
 .form-group {
   padding: 18px;
 }
+
+label.important:after {
+  content: " *";
+  color: red;
+}

@@ -11,6 +11,7 @@ export class PurchaseOrderService {
   getAllOrders() {
     return this.http.get('http://localhost:5000/orders');
   }
+
   createOrder(orders: any) {
     console.log('Order: ', orders);
     delete orders._id;
