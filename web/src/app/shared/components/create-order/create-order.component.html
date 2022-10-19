@@ -46,12 +46,18 @@
           <div class="form-group col2">
             <i class="icon fa-solid fa-chevron-down"></i>
             <label for="state">State</label>
-            <input
-              type="text"
-              class="form-control"
+            <select
+              id="state"
+              class="col1 form-control"
               formControlName="state"
               style="background-color: royalblue"
-            />
+            >
+              <option>Select state</option>
+
+              <option *ngFor="let state of states">
+                {{ state.state }}
+              </option>
+            </select>
           </div>
 
           <div class="form-group col1">
@@ -68,12 +74,18 @@
           <div class="form-group col2">
             <i class="icon fa-solid fa-chevron-down"></i>
             <label for="city">City</label>
-            <input
-              type="text"
-              class="form-control"
+            <select
+              id="city"
+              class="col1 form-control"
               formControlName="city"
               style="background-color: royalblue"
-            />
+            >
+              <option>Select city</option>
+
+              <option *ngFor="let city of cities">
+                {{ city.city }}
+              </option>
+            </select>
           </div>
           <div class="form-group col1">
             <i class="icon fa-solid fa-user"></i>
@@ -94,6 +106,7 @@
             <button
               class="btn btn-primary"
               style="background-color: royalblue; color: white"
+              [disabled]="!orderForm.valid"
             >
               Save
             </button>

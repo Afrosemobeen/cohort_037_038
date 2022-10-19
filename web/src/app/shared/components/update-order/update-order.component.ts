@@ -17,6 +17,8 @@ export class UpdateOrderComponent implements OnInit {
   @Input() order: any;
   @Output() onCancelUpdateEvent: EventEmitter<any>;
   ponum: any = [];
+  states: any = [];
+  cities: any = [];
 
   orderForm = this.purchaseOrderSer.getOrderFormData();
   constructor(private purchaseOrderSer: PurchaseOrderService) {
@@ -26,7 +28,8 @@ export class UpdateOrderComponent implements OnInit {
   ngOnInit(): void {
     this.orderForm.setValue({ ...this.order });
     this.ponum = this.purchaseOrderSer.poNumber();
-    console.log(this.ponum);
+    this.states = this.purchaseOrderSer.states();
+    this.cities = this.purchaseOrderSer.cities();
   }
 
   ngOnChanges(changes: SimpleChanges) {

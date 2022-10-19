@@ -11,11 +11,14 @@ import { __values } from 'tslib';
 export class CreateOrderComponent implements OnInit {
   orderForm = this.purchaseOrderSer.getOrderFormData();
   ponum: any = [];
+  states: any = [];
+  cities: any = [];
   constructor(private purchaseOrderSer: PurchaseOrderService) {}
 
   ngOnInit(): void {
     this.ponum = this.purchaseOrderSer.poNumber();
-    console.log(this.ponum);
+    this.states = this.purchaseOrderSer.states();
+    this.cities = this.purchaseOrderSer.cities();
   }
 
   createOrder() {

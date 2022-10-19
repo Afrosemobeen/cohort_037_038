@@ -42,4 +42,26 @@ export class PurchaseOrderService {
       { po_num: 'PO7856' },
     ];
   }
+
+  states() {
+    return [
+      { state: 'Karnataka' },
+      { state: 'Maharashtra' },
+      { state: 'Jammu and Kashmir' },
+      { state: 'Rajasthan' },
+    ];
+  }
+
+  cities() {
+    return [
+      { city: 'Belagavi' },
+      { city: 'Dharwad' },
+      { city: 'Kolhapur' },
+      { city: 'Pune' },
+      { city: 'Cargill' },
+      { city: 'Doda' },
+      { city: 'Jaipur' },
+      { city: 'Udaipur' },
+    ];
+  }
 }

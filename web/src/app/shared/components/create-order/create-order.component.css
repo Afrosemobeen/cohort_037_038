@@ -51,7 +51,9 @@ textarea {
   height: 90px;
 }
 
-#poNum {
+#poNum,
+#state,
+#city {
   width: 100%;
 }
 label {
