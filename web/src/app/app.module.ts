@@ -16,6 +16,9 @@ import { UserOperationsComponent } from './components/user-management/user-opera
 import { OrderModule } from 'ngx-order-pipe';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { AddUserComponent } from './components/user-management/add-user/add-user.component';
+
+import { NavModuleModule } from './nav-module/nav-module.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +39,8 @@ import { AddUserComponent } from './components/user-management/add-user/add-user
     MatIconModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    Ng2OrderModule
+    Ng2OrderModule,
+    NavModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+
 import { HeaderComponent } from './components/header/header.component';
 import { NavbarEditComponent } from './components/navbar-edit/navbar-edit.component';
 
@@ -11,7 +13,12 @@ import { NavbarEditComponent } from './components/navbar-edit/navbar-edit.compon
     NavbarEditComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserModule
+  ],
+  exports:[
+    HeaderComponent,
+    NavbarEditComponent
   ]
 })
 export class NavModuleModule { }
