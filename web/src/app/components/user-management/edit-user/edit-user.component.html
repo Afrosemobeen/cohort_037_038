@@ -1,0 +1,260 @@
+<!-- <div>
+    <div class="content-container">
+        <mat-icon id="close-icon" (click)="closeDialog()">close</mat-icon>
+        <span class="content-span full-width">Please enter your email and password</span>
+    </div>
+   
+    <form [formGroup]="empForm" (ngSubmit)="loginUser()">
+        <div>
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" name="email"formControlName="email">
+          <div *ngIf="(empForm.controls['email'].dirty || empForm.controls['email'].touched)
+                         && empForm.controls['email'].invalid" style="color:red">
+                <p  *ngIf="empForm.controls['email'].hasError('required')" >Email is Required</p>
+         </div>
+        </div>
+        <div>
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" name="password" formControlName="password">
+          <div *ngIf="(empForm.controls['password'].dirty || empForm.controls['password'].touched)
+                                     && empForm.controls['password'].invalid" style="color:red">
+                <p  *ngIf="empForm.controls['password'].hasError('required')" >Password is Required</p>
+                <p  *ngIf="empForm.controls['password'].hasError('minLength')" >Password sholud contain minimum of four characters</p>
+          </div>
+          <div *ngIf="sub==false">
+            <p>Invalid password</p>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mx-2 my-2"(click)="updateEmployee()" [disabled]="empForm.invalid" [mat-dialog-close]="sub">Submit</button>
+        
+      </form>
+
+</div> -->
+
+
+<!-- <div class="container">
+  <div class="content-container">
+     <mat-icon id="close-icon" (click)="closeDialog()">close</mat-icon>
+     -->
+<!-- </div>      
+  <div class="col-md-8">
+      <form [formGroup]="userForm" [mat-dialog-close]="true">
+          <div>
+              <div>
+                  <label >ID :</label>
+                  <input type="text" class="form-control"  formControlName="_id" readonly>
+              </div>
+              <div>
+                  <label >Employee Name :</label>
+                  <input type="text" class="form-control"  formControlName="fullName">
+              </div>
+              <div>
+                  <label >displayName :</label>
+                      <input type="text" class="form-control"  formControlName="displayName">
+
+              </div>
+              <div>
+                  <label >title :</label>
+                      <input type="text" class="form-control" formControlName="title">
+              </div>
+              <div>
+                  <label >userLevel :</label>
+                      <input type="text" class="form-control" formControlName="userLevel">
+                      
+              </div>
+              <div>
+                  <label >email :</label>
+                      <input type="text" class="form-control" formControlName="email">
+                      
+              </div>
+              <div>
+                  <label >phone :</label>
+                      <input type="text" class="form-control" placeholder="Phone" formControlName="phone">
+                      
+              </div>
+              <div>
+                  <label >status :</label>
+                      <input type="text" class="form-control" placeholder="Status" formControlName="status">
+                      
+              </div>
+              <div class="my-4 text-center">
+                  <button class="btn btn-primary mx-4" 
+                          (click)="updateUser()"> Edit</button>
+            </div>
+          </div>
+      </form>
+  </div>
+</div> --> 
+<!-- <div>
+    <div class="content-container">
+        <mat-icon id="close-icon" (click)="closeDialog()">close</mat-icon> -->
+        <!-- <span class="content-span full-width">Do you want to delete?</span> -->
+    <!-- </div>
+    <div>
+        <div class="container">
+    
+            <div class="col-md-8">
+                <form [formGroup]="userForm" >
+                    <div>
+                        <div>
+                            <label >ID :</label>
+                            <input type="text" class="form-control" formControlName="_id" readonly>
+                        </div>
+                        <div>
+                            <label >Full Name :</label>
+                                <input type="text" class="form-control" placeholder="Full Name" formControlName="fullName">
+                            </div>
+                        <div>
+                            <label >Display Name :</label>
+                                <input type="text" class="form-control" placeholder="Display Name" formControlName="displayName">
+        
+                        </div>
+                        <div>
+                            <label >Title :</label>
+                                <input type="text" class="form-control" placeholder="Title" formControlName="title">
+                        </div>
+                        <div>
+                            <label >UserLevel :</label>
+                                <input type="text" class="form-control" placeholder="User Level" formControlName="userLevel">
+                                
+                        </div>
+                        <div>
+                            <label >Email :</label>
+                                <input type="text" class="form-control" placeholder="Email" formControlName="email">
+                                
+                        </div>
+                        <div>
+                            <label >Phone :</label>
+                                <input type="text" class="form-control" placeholder="Phone" formControlName="phone">
+                                
+                        </div>
+                        <div>
+                            <label >Status :</label>
+                                <input type="text" class="form-control" placeholder="Status" formControlName="status">
+                                <mat-icon (click)="statusActive()">done</mat-icon>
+                                <mat-icon (click)="statusInactive()">close</mat-icon>
+                        </div>
+                        <div class="my-4 text-center">
+                            <button class="btn btn-primary mx-4" 
+                                    (click)="updateEmployee()" mat-flat-button id="yes-button" [mat-dialog-close]="true">Edit</button>
+                            <button class="btn btn-primary" 
+                                    (click)="cancelUpdateForm()" mat-flat-button id="no-button" [mat-dialog-close]="false"> Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div> -->
+
+
+
+
+        
+<div>
+    <div class="content-container">
+        <mat-icon id="close-icon" (click)="closeDialog()">close</mat-icon>
+
+    </div>
+    <div>
+        <div class="container">
+
+            <div class="col-md-8">
+                <form [formGroup]="userForm" >
+                    <div>
+                        <!-- <div>
+                            <label >ID :</label>
+                            <input type="text" class="form-control" formControlName="_id" readonly>
+                        </div> -->
+                        <div>
+                            <label >Full Name* :</label>
+                                <input type="text" class="form-control" placeholder="Full Name" formControlName="fullName">
+                                <div
+                                *ngIf="( userForm.controls['fullName'].dirty || userForm.controls['fullName'].touched) &&  userForm.controls['fullName'].invalid" style="color:red">
+                                  <p *ngIf=" userForm.controls['fullName'].hasError('required')">*Please fill this is mandatory field .</p>
+                                  <p *ngIf=" userForm.controls['fullName'].hasError('maxlength')" >*It should not contain more then 50 characters.</p>
+
+                                </div>
+                            </div>
+                        <div>
+                            <label >Display Name* :</label>
+                                <input type="text" class="form-control" placeholder="Display Name" formControlName="displayName">
+                                <div
+                                *ngIf="( userForm.controls['displayName'].dirty || userForm.controls['displayName'].touched) &&  userForm.controls['displayName'].invalid" style="color:red">
+                                  <p *ngIf=" userForm.controls['displayName'].hasError('required')">*Please fill this is mandatory field .</p>
+                                  <p *ngIf=" userForm.controls['displayName'].hasError('maxlength')" >*It should not contain more then 50 characters.</p>
+
+                                </div>
+
+                        </div>
+                        <div>
+                            <label >Title* :</label>
+                                <input type="text" class="form-control" placeholder="Title" formControlName="title">
+                                <div
+                                *ngIf="( userForm.controls['title'].dirty || userForm.controls['title'].touched) &&  userForm.controls['title'].invalid" style="color:red">
+                                  <p *ngIf=" userForm.controls['title'].hasError('required')">*Please fill this is mandatory field .</p>
+                                  <!-- <p *ngIf=" userForm.controls['title'].hasError('maxlength')" >*It should not contain more then 50 characters.</p> -->
+
+                                </div>
+                        </div>
+                        <div>
+                            <label >UserLevel* :</label>
+                                <input type="text" class="form-control" placeholder="User Level" formControlName="userLevel">
+                                <div
+                                *ngIf="( userForm.controls['userLevel'].dirty || userForm.controls['userLevel'].touched) &&  userForm.controls['userLevel'].invalid" style="color:red">
+                                  <p *ngIf=" userForm.controls['userLevel'].hasError('required')" >*Please fill this is mandatory field .</p>
+
+                                </div>
+
+                        </div>
+                        <div>
+                            <label >Email* :</label>
+                                <input type="text" class="form-control" placeholder="Email" formControlName="email">
+                                <div
+                                *ngIf="( userForm.controls['email'].dirty || userForm.controls['email'].touched) &&  userForm.controls['email'].invalid" style="color:red">
+                                  <p *ngIf=" userForm.controls['email'].hasError('required')" >*Please fill this mandatory field .</p>
+                                  <p *ngIf=" userForm.controls['email'].hasError('email')" >*Please enter a valid email .</p>
+                                </div>
+
+                        </div>
+                        <div>
+                            <label >Phone* :</label>
+                                <input type="text" class="form-control" placeholder="Phone" formControlName="phone">
+                                <div
+                                *ngIf="( userForm.controls['phone'].dirty || userForm.controls['phone'].touched) &&  userForm.controls['phone'].invalid" style="color:red">
+                                  <p *ngIf=" userForm.controls['phone'].hasError('required')" >*Please fill this is mandatory field .</p>
+                                  <p *ngIf=" userForm.controls['phone'].hasError('maxlength')">*Please enter a valid phone number .</p>
+
+                                </div>
+
+                        </div>
+                        <div>
+                            <label >Status* :</label>
+                                <input type="text" class="form-control" placeholder="Status" formControlName="status">
+                                <div
+                                *ngIf="( userForm.controls['status'].dirty || userForm.controls['status'].touched) &&  userForm.controls['status'].invalid" style="color:red">
+                                  <p *ngIf=" userForm.controls['status'].hasError('required')" >*Please fill this is mandatory field .</p>
+
+                                </div>
+                                <mat-icon (click)="statusActive()">done</mat-icon>
+                                <mat-icon (click)="statusInactive()">close</mat-icon>
+                        </div>
+                        <div class="my-4 text-center">
+                            <button class="btn btn-primary mx-4"
+                                    (click)="updateEmployee()" mat-flat-button id="yes-button" [mat-dialog-close]="true">Edit</button>
+                            <button class="btn btn-primary"
+                                    (click)="cancelUpdateForm()" mat-flat-button id="no-button" [mat-dialog-close]="false"> Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    <!-- </div>
+    <button mat-flat-button id="no-button" [mat-dialog-close]="false">CANCEL</button>
+    <button mat-flat-button id="yes-button" [mat-dialog-close]="true">YES</button>
+</div> -->
+
+        
+    <!-- </div>
+    <button mat-flat-button id="no-button" [mat-dialog-close]="false">CANCEL</button>
+    <button mat-flat-button id="yes-button" [mat-dialog-close]="true">YES</button>
+</div> -->
