@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { HeaderComponent } from './components/header/header.component';
 import { NavbarEditComponent } from './components/navbar-edit/navbar-edit.component';
+import { AppRoutingModule } from 'app/app-routing.module';
 
 
 
@@ -14,7 +15,8 @@ import { NavbarEditComponent } from './components/navbar-edit/navbar-edit.compon
   ],
   imports: [
     CommonModule,
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   exports:[
     HeaderComponent,
