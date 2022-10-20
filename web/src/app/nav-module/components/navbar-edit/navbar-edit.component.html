@@ -4,16 +4,16 @@
     <div class="form-check" >
          
         <ul class="list-group list-unstyled">
-            <li class="list-group-item" >
-      <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+            <li class="list-group-item" *ngFor="let n of navitem" >
+      <input class="form-check-input" type="checkbox" [value]="n.id" [checked]="n.select" (change)="onChangenavList($event)" id="flexCheckDefault">
       <label class="form-check-label" for="flexCheckDefault">
-        User Navigation
+        {{n.name}}
       </label>
             </li>
         </ul>
             <label class="text-danger my-2" *ngIf = "error">All Fields cannot be unchecked </label>
         <div class="text-center">
-    <button class="btn btn-primary my-3  mx-2" > Save</button>
+    <button class="btn btn-primary my-3  mx-2" (click)="saveNavList()" > Save</button>
     <button class="btn btn-secondary mx-2" (click)="closeUserSetting()"> Close</button>
         </div>
     </div>
