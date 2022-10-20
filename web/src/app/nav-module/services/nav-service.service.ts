@@ -22,6 +22,6 @@ export class NavServiceService {
   }
   putDataFromEditNavToService(data:any){
     this.myMethodSubject.next(data);                     
-  }
+  } 
 
 }

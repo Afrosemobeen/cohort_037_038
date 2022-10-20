@@ -6,7 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavbarEditComponent } from './components/navbar-edit/navbar-edit.component';
 import { AppRoutingModule } from 'app/app-routing.module';
 
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,8 @@ import { AppRoutingModule } from 'app/app-routing.module';
   imports: [
     CommonModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   exports:[
     HeaderComponent,
