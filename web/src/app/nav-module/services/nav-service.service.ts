@@ -17,5 +17,11 @@ export class NavServiceService {
         return this.http.put("http://localhost:5000/navedit", navTodisplay);
   }
 
+  sendDataToHeader(){    
+    return this.myMethodSubject.asObservable();                       
+  }
+  putDataFromEditNavToService(data:any){
+    this.myMethodSubject.next(data);                     
+  }
 
 }

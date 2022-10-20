@@ -23,8 +23,8 @@ export class HeaderComponent implements OnInit {
         // console.log("Data:",data);
         this.serNav = structuredClone(data);
         // this.sendnavhardcopy = structuredClone(this.serNav);
-        this.navService .sendInitialDataToService(data);
-        //console.log("rigjiofvafdkfpldskvdlvldddddddddddddddddddddddd")
+        // this.navService .sendInitialDataToService(data);
+        // console.log("rigjiofvafdkfpldskvdlvldddddddddddddddddddddddd")
       },
       error: ()=>{},
       complete: ()=>{},
