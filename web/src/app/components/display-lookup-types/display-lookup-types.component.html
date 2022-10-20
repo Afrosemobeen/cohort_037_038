@@ -1,0 +1,23 @@
+<div class="container" style="padding-left: 30px;">
+  
+    <table class="table table-sm table-striped table-condensed" class="col-md-8" style="text-align: center;">
+        <thead>
+            <tr>
+               <th>Value</th>
+               <th>Status</th>
+            </tr>
+        </thead>
+        <tbody style="text-align: center;" > 
+            <tr  *ngFor="let lookup of lookupInfo.lookupTypeItems | paginate:{itemsPerPage: 5, currentPage: p};">
+                <td>{{lookup.lookup_value}}</td>
+                <td>{{lookup.status}}</td>
+            </tr>
+        </tbody>
+        <pagination-controls (pageChange)="p= $event"> </pagination-controls>
+    </table>
+ 
+   
+
+</div>
+
+

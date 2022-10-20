@@ -1,43 +1,42 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UsersComponent } from './components/user-management/users/users.component';
-import { EditUserComponent } from './components/user-management/edit-user/edit-user.component';
-import { DisplayUserComponent } from './components/user-management/display-user/display-user.component';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatIconModule} from '@angular/material/icon'
-import { HttpClientModule } from '@angular/common/http';
-import { UserOperationsComponent } from './components/user-management/user-operations/user-operations.component';
-import { OrderModule } from 'ngx-order-pipe';
-import { Ng2OrderModule } from 'ng2-order-pipe';
-import { AddUserComponent } from './components/user-management/add-user/add-user.component';
+import { MatSelectModule} from '@angular/material/select';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import { CommonComponent } from './components/common/common.component'
+import { NgxPaginationModule } from 'ngx-pagination';
+import {MatIconModule} from '@angular/material/icon';
+import { DisplayLookupTypesComponent } from './components/display-lookup-types/display-lookup-types.component';
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent,
-    EditUserComponent,
-    DisplayUserComponent,
-    UserOperationsComponent,
-    AddUserComponent,
+    HeaderComponent,
+    CommonComponent,
+    DisplayLookupTypesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
-    ReactiveFormsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    MatIconModule,
-    MatDialogModule,
     BrowserAnimationsModule,
-    Ng2OrderModule
-  ],
+    MatSelectModule,
+    MatFormFieldModule,
+    NgxPaginationModule,
+    MatIconModule
+ ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

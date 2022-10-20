@@ -1,0 +1,21 @@
+ <div class="container" stylr="padding: 4%">
+  <div class="search"  style="text-align: center">
+    
+    <mat-form-field appearance="fill">
+      <mat-label style="color:blue">select</mat-label>
+      <mat-select  (selectionChange)="lookupChangeHandler($event)">
+       
+        <mat-option value="state">State</mat-option>
+        <mat-option value="city">City</mat-option>
+        <mat-option value="ponumber">Po Number</mat-option>
+        <mat-option value="title">Title</mat-option>
+        <mat-option value="status">Status</mat-option>
+    
+      </mat-select>
+      
+    </mat-form-field>
+  </div> 
+</div>
+ 
+ 
+

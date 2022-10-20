@@ -1,0 +1,5 @@
+
+<app-header (onChangeLookup)="getLookupInfo($event)"></app-header>
+
+<app-display-lookup-types  *ngIf="showStates==true" [lookupInfo]="lookupInfo" 
+        (onChangeLookup)="getLookupInfo($event)"></app-display-lookup-types>
