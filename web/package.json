@@ -23,6 +23,7 @@
     "@angular/router": "^14.2.0",
     "@ng-bootstrap/ng-bootstrap": "^13.0.0",
     "@popperjs/core": "^2.10.2",
+    "@rxweb/reactive-form-validators": "^2.1.7",
     "bootstrap": "^5.2.0",
     "cors": "^2.8.5",
     "font-awesome": "^4.7.0",

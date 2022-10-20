@@ -13,6 +13,7 @@ export class CreateOrderComponent implements OnInit {
   ponum: any = [];
   states: any = [];
   cities: any = [];
+  valid: boolean = true;
   constructor(private purchaseOrderSer: PurchaseOrderService) {}
 
   ngOnInit(): void {
@@ -25,8 +26,9 @@ export class CreateOrderComponent implements OnInit {
     console.log('orderForm:', this.orderForm.value);
 
     if (!this.orderForm.valid) {
-      alert('data are missing in some fields');
-      return;
+      // alert('data are missing in some fields');
+      // return;
+      this.valid = false;
     }
     const order = {
       ...this.orderForm.value,

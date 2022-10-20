@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { RxwebValidators } from '@rxweb/reactive-form-validators';
 
 @Injectable({
   providedIn: 'root',
@@ -23,16 +24,26 @@ export class PurchaseOrderService {
   }
 
   getOrderFormData() {
-    return this.fbSer.group({
-      _id: [''],
-      po_num: ['', [Validators.required]],
-      desc: ['', [Validators.required]],
-      date: ['', [Validators.required]],
-      state: ['', [Validators.required]],
-      total_amt: ['', [Validators.required]],
-      city: ['', [Validators.required]],
-      username: ['', [Validators.required]],
-    });
+    return this.fbSer.group(
+      {
+        _id: [''],
+        po_num: ['', [Validators.required, RxwebValidators.unique()]],
+        desc: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(10),
+            Validators.maxLength(50),
+          ],
+        ],
+        date: ['', [Validators.required]],
+        state: ['', [Validators.required]],
+        total_amt: ['', [Validators.required]],
+        city: ['', [Validators.required]],
+        username: ['', [Validators.required, Validators.minLength(5)]],
+      },
+      { updateOn: 'submit' }
+    );
   }
 
   poNumber() {
@@ -41,6 +52,10 @@ export class PurchaseOrderService {
       { po_num: 'PO4562' },
       { po_num: 'PO7859' },
       { po_num: 'PO7856' },
+      { po_num: 'PO8524' },
+      { po_num: 'PO4569' },
+      { po_num: 'PO7531' },
+      { po_num: 'PO9518' },
     ];
   }
 

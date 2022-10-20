@@ -3,9 +3,14 @@
     <div>
       <h3 class="title">PURCHASE ORDER</h3>
     </div>
+    <p *ngIf="!valid" class="alert alert-danger">Some fields are missing</p>
 
     <div style="background-color: white; overflow: hidden" class="col-md-12">
-      <form [formGroup]="orderForm" (ngSubmit)="createOrder()">
+      <form
+        [formGroup]="orderForm"
+        (ngSubmit)="createOrder()"
+        #localForm="ngForm"
+      >
         <div class="two-col">
           <div class="form-group col1">
             <i class="icon fa-solid fa-chevron-down"></i>
@@ -22,6 +27,24 @@
                 {{ poNumbers.po_num }}
               </option>
             </select>
+            <div
+              *ngIf="
+                (orderForm.controls['po_num'].dirty ||
+                  orderForm.controls['po_num'].touched) &&
+                orderForm.controls['po_num'].invalid
+              "
+              class="alert alert-danger"
+            >
+              <p *ngIf="orderForm.controls['po_num'].hasError('required')">
+                Po number is required!!
+              </p>
+              <p *ngIf="orderForm.controls['po_num'].hasError('unique')">
+                 This Po number is taken
+              </p>
+              <!-- <p *ngIf="orderForm.controls['po_num'].hasError('max')">
+                Maximum salary should be 100000
+              </p> -->
+            </div>
           </div>
 
           <div class="form-group col2">
@@ -32,6 +55,24 @@
               formControlName="desc"
               style="background-color: royalblue"
             ></textarea>
+            <div
+              *ngIf="
+                (orderForm.controls['desc'].dirty ||
+                  orderForm.controls['desc'].touched) &&
+                orderForm.controls['desc'].invalid
+              "
+              class="alert alert-danger"
+            >
+              <p *ngIf="orderForm.controls['desc'].hasError('required')">
+                Description is required!!
+              </p>
+              <p *ngIf="orderForm.controls['desc'].hasError('minLength')">
+                Minimum characters should be 10
+              </p>
+              <p *ngIf="orderForm.controls['desc'].hasError('maxLength')">
+                Minimum characters should be 50
+              </p>
+            </div>
           </div>
 
           <div class="form-group col1">
@@ -42,6 +83,24 @@
               formControlName="date"
               style="background-color: royalblue"
             />
+            <div
+              *ngIf="
+                (orderForm.controls['date'].dirty ||
+                  orderForm.controls['date'].touched) &&
+                orderForm.controls['date'].invalid
+              "
+              class="alert alert-danger"
+            >
+              <p *ngIf="orderForm.controls['date'].hasError('required')">
+                Date is required!!
+              </p>
+              <!-- <p *ngIf="orderForm.controls['date'].hasError('min')">
+                Minimum salary should be 10000
+              </p>
+              <p *ngIf="orderForm.controls['date'].hasError('max')">
+                Maximum salary should be 100000
+              </p> -->
+            </div>
           </div>
           <div class="form-group col2">
             <i class="icon fa-solid fa-chevron-down"></i>
@@ -58,6 +117,24 @@
                 {{ state.state }}
               </option>
             </select>
+            <!-- <div
+              *ngIf="
+                (orderForm.controls['state'].dirty ||
+                  orderForm.controls['state'].touched) &&
+                orderForm.controls['state'].invalid
+              "
+              class="alert alert-danger"
+            >
+              <p *ngIf="orderForm.controls['state'].hasError('required')">
+                Salary is required!!
+              </p>
+              <p *ngIf="orderForm.controls['state'].hasError('min')">
+                Minimum salary should be 10000
+              </p>
+              <p *ngIf="orderForm.controls['state'].hasError('max')">
+                Maximum salary should be 100000
+              </p>
+            </div> -->
           </div>
 
           <div class="form-group col1">
@@ -69,6 +146,24 @@
               formControlName="total_amt"
               style="background-color: royalblue"
             />
+            <div
+              *ngIf="
+                (orderForm.controls['total_amt'].dirty ||
+                  orderForm.controls['total_amt'].touched) &&
+                orderForm.controls['total_amt'].invalid
+              "
+              class="alert alert-danger"
+            >
+              <p *ngIf="orderForm.controls['total_amt'].hasError('required')">
+                Amount is required!!
+              </p>
+              <!-- <p *ngIf="orderForm.controls['total_amt'].hasError('min')">
+                Minimum amount should be 10000
+              </p>
+              <p *ngIf="orderForm.controls['total_amt'].hasError('max')">
+                Maximum salary should be 100000
+              </p> -->
+            </div>
           </div>
 
           <div class="form-group col2">
@@ -86,6 +181,24 @@
                 {{ city.city }}
               </option>
             </select>
+            <!-- <div
+              *ngIf="
+                (orderForm.controls['city'].dirty ||
+                  orderForm.controls['city'].touched) &&
+                orderForm.controls['city'].invalid
+              "
+              class="alert alert-danger"
+            >
+              <p *ngIf="orderForm.controls['city'].hasError('required')">
+                Salary is required!!
+              </p>
+              <p *ngIf="orderForm.controls['city'].hasError('min')">
+                Minimum salary should be 10000
+              </p>
+              <p *ngIf="orderForm.controls['city'].hasError('max')">
+                Maximum salary should be 100000
+              </p>
+            </div> -->
           </div>
           <div class="form-group col1">
             <i class="icon fa-solid fa-user"></i>
@@ -97,6 +210,24 @@
               formControlName="username"
               style="background-color: royalblue"
             />
+            <div
+              *ngIf="
+                (orderForm.controls['username'].dirty ||
+                  orderForm.controls['username'].touched) &&
+                orderForm.controls['username'].invalid
+              "
+              class="alert alert-danger"
+            >
+              <p *ngIf="orderForm.controls['username'].hasError('required')">
+                User name is required!!
+              </p>
+              <p *ngIf="orderForm.controls['username'].hasError('minLength')">
+                Minimum characters is 5
+              </p>
+              <!-- <p *ngIf="orderForm.controls['username'].hasError('maxLegth')">
+                Maximum salary should be 100000
+              </p> -->
+            </div>
           </div>
 
           <div class="my-4 col2 text-center">
