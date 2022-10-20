@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { PurchaseOrderService } from 'src/app/services/purchase-order.service';
 import { __values } from 'tslib';
 
@@ -14,6 +14,7 @@ export class CreateOrderComponent implements OnInit {
   states: any = [];
   cities: any = [];
   valid: boolean = true;
+
   constructor(private purchaseOrderSer: PurchaseOrderService) {}
 
   ngOnInit(): void {

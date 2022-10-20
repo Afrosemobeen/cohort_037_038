@@ -24,26 +24,23 @@ export class PurchaseOrderService {
   }
 
   getOrderFormData() {
-    return this.fbSer.group(
-      {
-        _id: [''],
-        po_num: ['', [Validators.required, RxwebValidators.unique()]],
-        desc: [
-          '',
-          [
-            Validators.required,
-            Validators.minLength(10),
-            Validators.maxLength(50),
-          ],
+    return this.fbSer.group({
+      _id: [''],
+      po_num: ['', [Validators.required, RxwebValidators.unique()]],
+      desc: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(10),
+          Validators.maxLength(50),
         ],
-        date: ['', [Validators.required]],
-        state: ['', [Validators.required]],
-        total_amt: ['', [Validators.required]],
-        city: ['', [Validators.required]],
-        username: ['', [Validators.required, Validators.minLength(5)]],
-      },
-      { updateOn: 'submit' }
-    );
+      ],
+      date: ['', [Validators.required]],
+      state: ['', [Validators.required]],
+      total_amt: ['', [Validators.required]],
+      city: ['', [Validators.required]],
+      username: ['', [Validators.required, Validators.minLength(5)]],
+    });
   }
 
   poNumber() {

@@ -6,6 +6,7 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { PurchaseOrderService } from 'src/app/services/purchase-order.service';
 
 @Component({
@@ -21,15 +22,19 @@ export class UpdateOrderComponent implements OnInit {
   cities: any = [];
 
   orderForm = this.purchaseOrderSer.getOrderFormData();
-  constructor(private purchaseOrderSer: PurchaseOrderService) {
+
+  constructor(
+    private purchaseOrderSer: PurchaseOrderService,
+    private fbSer: FormBuilder
+  ) {
     this.onCancelUpdateEvent = new EventEmitter();
   }
 
   ngOnInit(): void {
     this.orderForm.setValue({ ...this.order });
-    this.ponum = this.purchaseOrderSer.poNumber();
-    this.states = this.purchaseOrderSer.states();
-    this.cities = this.purchaseOrderSer.cities();
+    // this.ponum = this.purchaseOrderSer.poNumber();
+    // this.states = this.purchaseOrderSer.states();
+    // this.cities = this.purchaseOrderSer.cities();
   }
 
   ngOnChanges(changes: SimpleChanges) {

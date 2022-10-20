@@ -6,11 +6,7 @@
     <p *ngIf="!valid" class="alert alert-danger">Some fields are missing</p>
 
     <div style="background-color: white; overflow: hidden" class="col-md-12">
-      <form
-        [formGroup]="orderForm"
-        (ngSubmit)="createOrder()"
-        #localForm="ngForm"
-      >
+      <form [formGroup]="orderForm" (ngSubmit)="createOrder()">
         <div class="two-col">
           <div class="form-group col1">
             <i class="icon fa-solid fa-chevron-down"></i>
@@ -27,13 +23,14 @@
                 {{ poNumbers.po_num }}
               </option>
             </select>
+
             <div
               *ngIf="
                 (orderForm.controls['po_num'].dirty ||
                   orderForm.controls['po_num'].touched) &&
                 orderForm.controls['po_num'].invalid
               "
-              class="alert alert-danger"
+              class="alert1"
             >
               <p *ngIf="orderForm.controls['po_num'].hasError('required')">
                 Po number is required!!
@@ -61,7 +58,7 @@
                   orderForm.controls['desc'].touched) &&
                 orderForm.controls['desc'].invalid
               "
-              class="alert alert-danger"
+              class="alert"
             >
               <p *ngIf="orderForm.controls['desc'].hasError('required')">
                 Description is required!!
@@ -89,7 +86,7 @@
                   orderForm.controls['date'].touched) &&
                 orderForm.controls['date'].invalid
               "
-              class="alert alert-danger"
+              class="alert"
             >
               <p *ngIf="orderForm.controls['date'].hasError('required')">
                 Date is required!!
@@ -105,6 +102,12 @@
           <div class="form-group col2">
             <i class="icon fa-solid fa-chevron-down"></i>
             <label class="important">State</label>
+            <!-- <input
+              type="text"
+              class="form-control"
+              formControlName="state"
+              style="background-color: royalblue"
+            /> -->
             <select
               id="state"
               class="col1 form-control"
@@ -152,10 +155,10 @@
                   orderForm.controls['total_amt'].touched) &&
                 orderForm.controls['total_amt'].invalid
               "
-              class="alert alert-danger"
+              class="alert"
             >
               <p *ngIf="orderForm.controls['total_amt'].hasError('required')">
-                Amount is required!!
+                Amount is required
               </p>
               <!-- <p *ngIf="orderForm.controls['total_amt'].hasError('min')">
                 Minimum amount should be 10000
@@ -169,6 +172,12 @@
           <div class="form-group col2">
             <i class="icon fa-solid fa-chevron-down"></i>
             <label class="important">City</label>
+            <!-- <input
+              type="text"
+              class="form-control"
+              formControlName="city"
+              style="background-color: royalblue"
+            /> -->
             <select
               id="city"
               class="col1 form-control"
@@ -216,7 +225,7 @@
                   orderForm.controls['username'].touched) &&
                 orderForm.controls['username'].invalid
               "
-              class="alert alert-danger"
+              class="alert"
             >
               <p *ngIf="orderForm.controls['username'].hasError('required')">
                 User name is required!!

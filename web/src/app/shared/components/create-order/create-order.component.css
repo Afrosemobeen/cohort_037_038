@@ -69,3 +69,16 @@ label.important:after {
   content: " *";
   color: red;
 }
+
+.alert {
+  color: red;
+  margin: 0%;
+  padding: 0%;
+  position: fixed;
+}
+
+.alert1 {
+  color: red;
+  position: sticky;
+  margin-bottom: 0px;
+}
