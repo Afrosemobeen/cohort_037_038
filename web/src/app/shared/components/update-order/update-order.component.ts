@@ -23,18 +23,15 @@ export class UpdateOrderComponent implements OnInit {
 
   orderForm = this.purchaseOrderSer.getOrderFormData();
 
-  constructor(
-    private purchaseOrderSer: PurchaseOrderService,
-    private fbSer: FormBuilder
-  ) {
+  constructor(private purchaseOrderSer: PurchaseOrderService) {
     this.onCancelUpdateEvent = new EventEmitter();
   }
 
   ngOnInit(): void {
     this.orderForm.setValue({ ...this.order });
-    // this.ponum = this.purchaseOrderSer.poNumber();
-    // this.states = this.purchaseOrderSer.states();
-    // this.cities = this.purchaseOrderSer.cities();
+    this.ponum = this.purchaseOrderSer.poNumber();
+    this.states = this.purchaseOrderSer.states();
+    this.cities = this.purchaseOrderSer.cities();
   }
 
   ngOnChanges(changes: SimpleChanges) {
