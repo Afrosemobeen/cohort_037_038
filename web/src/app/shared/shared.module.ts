@@ -11,7 +11,7 @@ import { DisplayOrderComponent } from './components/display-order/display-order.
 import { UpdateOrderComponent } from './components/update-order/update-order.component';
 import { PurchaseOrderComponent } from './components/purchase-order/purchase-order.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +27,6 @@ import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    RxReactiveFormsModule,
     MatIconModule,
     BrowserAnimationsModule,
     AppRoutingModule,

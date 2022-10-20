@@ -1,4 +1,4 @@
-<body>
+<!-- <body>
   <div class="container">
     <div>
       <h3 class="title">UPDATE PURCHASE ORDER</h3>
@@ -97,6 +97,266 @@
               formControlName="username"
               style="background-color: royalblue"
             />
+          </div>
+
+          <div class="my-4 col2 text-center">
+            <button
+              class="btn btn-outline-danger mx-2"
+              (click)="cancelUpdateForm()"
+            >
+              Cancel
+            </button>
+            <button
+              class="btn btn-primary"
+              style="background-color: royalblue; color: white"
+            >
+              Update
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body> -->
+<body>
+  <div class="container">
+    <div>
+      <h3 class="title">UPDATE PURCHASE ORDER</h3>
+    </div>
+    <p *ngIf="!valid" class="alert alert-danger">Some fields are missing</p>
+
+    <div style="background-color: white; overflow: hidden" class="col-md-12">
+      <form [formGroup]="orderForm" (ngSubmit)="createOrder()">
+        <div class="two-col">
+          <div class="form-group col1">
+            <i class="icon fa-solid fa-chevron-down"></i>
+            <label class="important">Po Number</label>
+            <select
+              id="poNum"
+              class="col1 form-control"
+              formControlName="po_num"
+              style="background-color: royalblue"
+            >
+              <option>Select PO number</option>
+
+              <option *ngFor="let poNumbers of ponum">
+                {{ poNumbers.po_num }}
+              </option>
+            </select>
+
+            <div
+              *ngIf="
+                (orderForm.controls['po_num'].dirty ||
+                  orderForm.controls['po_num'].touched) &&
+                orderForm.controls['po_num'].invalid
+              "
+              class="alert1"
+            >
+              <p *ngIf="orderForm.controls['po_num'].hasError('required')">
+                Po number is required!!
+              </p>
+              <p *ngIf="orderForm.controls['po_num'].hasError('unique')">
+                 This Po number is taken
+              </p>
+              <!-- <p *ngIf="orderForm.controls['po_num'].hasError('max')">
+                Maximum salary should be 100000
+              </p> -->
+            </div>
+          </div>
+
+          <div class="form-group col2">
+            <label class="important">Description</label>
+            <textarea
+              type="text"
+              class="form-control"
+              formControlName="desc"
+              style="background-color: royalblue"
+            ></textarea>
+            <div
+              *ngIf="
+                (orderForm.controls['desc'].dirty ||
+                  orderForm.controls['desc'].touched) &&
+                orderForm.controls['desc'].invalid
+              "
+              class="alert"
+            >
+              <p *ngIf="orderForm.controls['desc'].hasError('required')">
+                Description is required!!
+              </p>
+              <p *ngIf="orderForm.controls['desc'].hasError('minLength')">
+                Minimum characters should be 10
+              </p>
+              <p *ngIf="orderForm.controls['desc'].hasError('maxLength')">
+                Minimum characters should be 50
+              </p>
+            </div>
+          </div>
+
+          <div class="form-group col1">
+            <label class="important">Date</label>
+            <input
+              type="date"
+              class="form-control"
+              formControlName="date"
+              style="background-color: royalblue"
+            />
+            <div
+              *ngIf="
+                (orderForm.controls['date'].dirty ||
+                  orderForm.controls['date'].touched) &&
+                orderForm.controls['date'].invalid
+              "
+              class="alert"
+            >
+              <p *ngIf="orderForm.controls['date'].hasError('required')">
+                Date is required!!
+              </p>
+              <!-- <p *ngIf="orderForm.controls['date'].hasError('min')">
+                Minimum salary should be 10000
+              </p>
+              <p *ngIf="orderForm.controls['date'].hasError('max')">
+                Maximum salary should be 100000
+              </p> -->
+            </div>
+          </div>
+          <div class="form-group col2">
+            <i class="icon fa-solid fa-chevron-down"></i>
+            <label class="important">State</label>
+            <!-- <input
+              type="text"
+              class="form-control"
+              formControlName="state"
+              style="background-color: royalblue"
+            /> -->
+            <select
+              id="state"
+              class="col1 form-control"
+              formControlName="state"
+              style="background-color: royalblue"
+            >
+              <option>Select state</option>
+
+              <option *ngFor="let state of states">
+                {{ state.state }}
+              </option>
+            </select>
+            <!-- <div
+              *ngIf="
+                (orderForm.controls['state'].dirty ||
+                  orderForm.controls['state'].touched) &&
+                orderForm.controls['state'].invalid
+              "
+              class="alert alert-danger"
+            >
+              <p *ngIf="orderForm.controls['state'].hasError('required')">
+                Salary is required!!
+              </p>
+              <p *ngIf="orderForm.controls['state'].hasError('min')">
+                Minimum salary should be 10000
+              </p>
+              <p *ngIf="orderForm.controls['state'].hasError('max')">
+                Maximum salary should be 100000
+              </p>
+            </div> -->
+          </div>
+
+          <div class="form-group col1">
+            <i class="icon fa-solid fa-indian-rupee-sign"></i>
+            <label class="important">Total Amount</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="total_amt"
+              style="background-color: royalblue"
+            />
+            <div
+              *ngIf="
+                (orderForm.controls['total_amt'].dirty ||
+                  orderForm.controls['total_amt'].touched) &&
+                orderForm.controls['total_amt'].invalid
+              "
+              class="alert"
+            >
+              <p *ngIf="orderForm.controls['total_amt'].hasError('required')">
+                Amount is required
+              </p>
+              <!-- <p *ngIf="orderForm.controls['total_amt'].hasError('min')">
+                Minimum amount should be 10000
+              </p>
+              <p *ngIf="orderForm.controls['total_amt'].hasError('max')">
+                Maximum salary should be 100000
+              </p> -->
+            </div>
+          </div>
+
+          <div class="form-group col2">
+            <i class="icon fa-solid fa-chevron-down"></i>
+            <label class="important">City</label>
+            <!-- <input
+              type="text"
+              class="form-control"
+              formControlName="city"
+              style="background-color: royalblue"
+            /> -->
+            <select
+              id="city"
+              class="col1 form-control"
+              formControlName="city"
+              style="background-color: royalblue"
+            >
+              <option>Select city</option>
+
+              <option *ngFor="let city of cities">
+                {{ city.city }}
+              </option>
+            </select>
+            <!-- <div
+              *ngIf="
+                (orderForm.controls['city'].dirty ||
+                  orderForm.controls['city'].touched) &&
+                orderForm.controls['city'].invalid
+              "
+              class="alert alert-danger"
+            >
+              <p *ngIf="orderForm.controls['city'].hasError('required')">
+                Salary is required!!
+              </p>
+              <p *ngIf="orderForm.controls['city'].hasError('min')">
+                Minimum salary should be 10000
+              </p>
+              <p *ngIf="orderForm.controls['city'].hasError('max')">
+                Maximum salary should be 100000
+              </p>
+            </div> -->
+          </div>
+          <div class="form-group col1">
+            <i class="icon fa-solid fa-user"></i>
+
+            <label class="important"> User Name</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="username"
+              style="background-color: royalblue"
+            />
+            <div
+              *ngIf="
+                (orderForm.controls['username'].dirty ||
+                  orderForm.controls['username'].touched) &&
+                orderForm.controls['username'].invalid
+              "
+              class="alert"
+            >
+              <p *ngIf="orderForm.controls['username'].hasError('required')">
+                User name is required!!
+              </p>
+              <p *ngIf="orderForm.controls['username'].hasError('minLength')">
+                Minimum characters is 5
+              </p>
+              <!-- <p *ngIf="orderForm.controls['username'].hasError('maxLegth')">
+                Maximum salary should be 100000
+              </p> -->
+            </div>
           </div>
 
           <div class="my-4 col2 text-center">
