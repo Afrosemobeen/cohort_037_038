@@ -123,10 +123,9 @@
     <div>
       <h3 class="title">UPDATE PURCHASE ORDER</h3>
     </div>
-    <p *ngIf="!valid" class="alert alert-danger">Some fields are missing</p>
 
     <div style="background-color: white; overflow: hidden" class="col-md-12">
-      <form [formGroup]="orderForm" (ngSubmit)="createOrder()">
+      <form [formGroup]="orderForm" (ngSubmit)="updateOrder()">
         <div class="two-col">
           <div class="form-group col1">
             <i class="icon fa-solid fa-chevron-down"></i>
@@ -156,7 +155,7 @@
                 Po number is required!!
               </p>
               <p *ngIf="orderForm.controls['po_num'].hasError('unique')">
-                 This Po number is taken
+                This Po number is taken
               </p>
               <!-- <p *ngIf="orderForm.controls['po_num'].hasError('max')">
                 Maximum salary should be 100000

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { PurchaseOrderService } from 'src/app/services/purchase-order.service';
+import { PurchaseOrderService } from 'app/services/purchase-order.service';
 import { PurchaseOrderComponent } from '../purchase-order/purchase-order.component';
 
 @Component({
