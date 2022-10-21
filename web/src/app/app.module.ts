@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UserModuleModule } from "./user-module/user-module.module";
+
 
 import { NavModuleModule } from './nav-module/nav-module.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,6 +29,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    UserModuleModule,
     NavModuleModule,
     ReactiveFormsModule,
     FormsModule,
@@ -35,6 +38,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

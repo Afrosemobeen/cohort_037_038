@@ -1,0 +1,22 @@
+:host{
+    table{
+        margin:  auto;
+    }
+    table,th,td{
+        border: 1px solid white;
+        border-collapse: collapse;
+    }
+    th{
+        background-color: #3f95f8;
+        color: white;
+        font-weight: 400;
+        padding: 10px;
+    }
+    tr:nth-child(odd){
+        background-color: #8db3ef;
+    }
+    td{
+        padding: 5px 10px ;
+        font-weight: 400;
+    }
+}

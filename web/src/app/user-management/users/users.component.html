@@ -1,0 +1,126 @@
+<div>
+  <form>
+    <div class="form-group">
+      <input
+        class="form-control"
+        type="text"
+        name="fullName"
+        placeholder="Full Name"
+        value="Full Name:{{ fullName.value }}"
+      />
+      <input
+        class="form-control"
+        type="text"
+        name="displayName"
+        placeholder="Display Name"
+        value="Display Name:{{ displayName.value }}"
+      />
+      <input
+        class="form-control"
+        type="text"
+        name="title"
+        placeholder="Title"
+        value="Title:{{ title.value }}"
+      />
+      <input
+        class="form-control"
+        type="text"
+        name="userLevel"
+        placeholder="User Level"
+        value="userLevel:{{ userLevel.value }}"
+      />
+      <input
+        class="form-control"
+        type="text"
+        name="email"
+        placeholder="Email"
+        value="Email:{{ email.value }}"
+      />
+      <input
+        class="form-control"
+        type="text"
+        name="phone"
+        placeholder="Phone"
+        value="Phone:{{ phone.value }}"
+      />
+      <input
+        class="form-control"
+        type="text"
+        name="status"
+        placeholder="Status"
+        value="Status:{{ status.value }}"
+      />
+    </div>
+  </form>
+  <div class="filter-buttons">
+    <button type="button" class="btn btn-primary button" (click)="open()">
+      Add New User
+    </button>
+    <button
+      type="button"
+      class="btn btn-outline-primary button"
+      (click)="clearForm()"
+    >
+      Clear Filter
+    </button>
+  </div>
+</div>
+
+
+
+<!-- <div>
+  <div class="button11 " (click)="clearFilter()"><b>Clear Filter</b></div>
+  <div class=" button21" (click)="applyFilter()"><b>Apply Filter</b></div>
+</div> -->
+<div>
+</div>
+<div class="container">
+  <!-- <form > -->
+    
+      <!-- <div class="col-25">
+        <label for="fname">Full Name</label>
+      </div> -->
+     
+        <input type="text" id="fname" placeholder="FullName" name="firstname" [(ngModel)]="filterModel.fullName">
+        
+        <input type="text" id="fname" placeholder="displayName" name="firstname" [(ngModel)]="filterModel.displayName">
+        <input type="text" id="fname" placeholder="title" name="firstname" [(ngModel)]="filterModel.title">
+        <input type="text" id="fname" placeholder="userLevel" name="firstname" [(ngModel)]="filterModel.userLevel">
+        <input type="text" id="fname" placeholder="email" name="firstname" [(ngModel)]="filterModel.email">
+        <input type="text" id="fname" placeholder="phone" name="firstname" [(ngModel)]="filterModel.phone">
+        <input type="text" id="fname" placeholder="status" name="firstname" [(ngModel)]="filterModel.status">
+    
+    <!-- <div class="row">
+     <div class="col-25">
+       <label for="fname">Title</label>
+     </div>
+     <div class="col-75">
+       <input type="text" id="fname" name="firstname"[(ngModel)]="filterModel.title">
+     </div>
+   </div>
+   <div class="row">
+     <div class="col-25">
+       <label for="fname">Email</label>
+     </div>
+     <div class="col-75">
+       <input type="text" id="fname" name="firstname" [(ngModel)]="filterModel.email" >
+     </div>
+   </div>
+   <div class="row">
+     <div class="col-25">
+       <label for="fname">Phone</label>
+     </div>
+     <div class="col-75">
+       <input type="text" id="fname" name="firstname" [(ngModel)]="filterModel.phone">
+     </div>
+   </div>
+   <div class="row">
+     <div class="col-25">
+       <label for="fname">Status</label>
+     </div>
+     <div class="col-75">
+       <input type="text" id="fname" name="firstname" [(ngModel)]="filterModel.status">
+     </div>
+  </div> -->
+  <!-- </form> -->
+</div>

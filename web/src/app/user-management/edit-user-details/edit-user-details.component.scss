@@ -1,0 +1,32 @@
+:host{
+    mat-icon{
+        float: right;
+    }
+    
+}
+.form-fields{
+    margin: 20px;
+    // display: flex 2;
+}
+label{
+    font-weight: bold;
+    margin-bottom: 3px;
+    color: #434040;
+}
+
+.active{
+    font-size: 1.5rem;
+    padding: 5px;
+    color: #65d948;
+    text-align: right;
+}
+.inactive{
+    font-size: 1.5rem;
+    padding: 5px;
+    color: #f54545;
+    text-align: right;
+}
+
+.modal-footer{
+    justify-content: center;
+}
