@@ -1,8 +1,37 @@
-<div>
+ <!-- <div class="btn"> <button class="btn btn-primary mx-4">Green</button> -->
+  <!-- <button class="btn btn-primary">Blue</button></div>  --> 
+    <!-- <div class="Box"><div class="btn"> <button class="btn btn-primary btn-lg mx-4">Clear Filter</button>
+                                      <button class="btn btn-primary btn-lg">Edit Filter</button>
+                          </div>
+   </div>
+  <section class="card">
+   <div class="container-fluid" >
+    <div class="slider-warp">
+        <div class="slider-main" >
+          <div class="item" *ngFor="let emp of empObjs" >
+            <div> 
+              <img src="/assets/images/female.jpg" width="150" height="110" style="vertical-align:middle; margin-top:10%;margin-left: 25%;margin-right: 50%;">
+              <div class="container">
+              <strong>Emp Name:</strong>{{emp.ename}}<br>
+                <strong>Emp No:</strong>{{emp.empno}}<br>    
+                <strong>Job:</strong> {{emp.job}}<br>
+                <strong>salary:</strong>{{emp.sal}}<br>
+                <strong>Dept No:</strong>{{emp.deptno}}<br>
+                <a routerLink="/users-details">expand btn</a> -->
+               <!-- <button (click)="expand()">expand</button>
+              </div>
+            </div>
+           </div>
+        </div>
+      </div>
+        <div class="button-area">
+          <mat-icon  [ngStyle]="prev?" appPrev>navigate_before</mat-icon> -->
+               <!-- <button class="prev" appPrev > prev </button>
+              <button class="next" appNext > > </button>
+        </div>
+    </div>
+  </section>   --> 
+ 
   
-  <!-- <app-users></app-users>
 
-  <app-display-user></app-display-user> -->
-  <app-user-operations></app-user-operations>
-  
-</div>
+  <router-outlet></router-outlet>
