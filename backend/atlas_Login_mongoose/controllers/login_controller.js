@@ -1,7 +1,7 @@
 const Emp = require("../models/login");
 
 exports.getUser = function (req, res) {
-  console.log("from signup service");
+  console.log("from getloginuser service");
 
   Emp.find().exec(function (err, result) {
     res.send(result);
@@ -9,7 +9,7 @@ exports.getUser = function (req, res) {
 };
 
 exports.createUser = function (req, res) {
-  console.log("from saveemployee service");
+  console.log("from saveloginuser service");
   const { body, params, query } = req;
   console.log("body: ", body);
   console.log("params: ", params);
