@@ -11,7 +11,6 @@ import { DisplayOrderComponent } from './components/display-order/display-order.
 import { UpdateOrderComponent } from './components/update-order/update-order.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PurchaseOrderComponent } from './components/purchase-order/purchase-order.component';
-
 @NgModule({
   declarations: [
     CreateOrderComponent,
@@ -30,6 +29,7 @@ import { PurchaseOrderComponent } from './components/purchase-order/purchase-ord
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    
   ],
   exports: [PurchaseOrderComponent],
 })

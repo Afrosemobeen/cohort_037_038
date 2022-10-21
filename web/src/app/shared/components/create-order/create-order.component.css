@@ -33,10 +33,12 @@ body {
 
 .two-col .col1 {
   float: left;
+  
 }
 
 .two-col .col2 {
   float: right;
+ 
 }
 
 input[type="text"],
@@ -62,7 +64,7 @@ label {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .form-group {
-  padding: 18px;
+  padding: 18px 18px 6px 18px;
 }
 
 label.important:after {
