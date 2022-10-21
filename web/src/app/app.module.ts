@@ -11,6 +11,7 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
     AppComponent,
     LoginFormComponent,
     SignupFormComponent,
+    DashboardComponent,
    
   ],
   imports: [
