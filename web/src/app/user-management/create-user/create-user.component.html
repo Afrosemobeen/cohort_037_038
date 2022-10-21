@@ -15,7 +15,6 @@
           <input
             type="text"
             class="form-control"
-            placeholder="Full Name"
             [formControl]="fullName"
           />
           <div
@@ -35,7 +34,6 @@
           <input
             type="text"
             class="form-control"
-            placeholder="Display Name"
             [formControl]="displayName"
           />
           <div
@@ -62,7 +60,6 @@
           /> -->
           <select
             class="form-control"
-            placeholder="Title"
             [formControl]="title"
           >
             <option *ngFor="let dept of departments" [value]="dept.name">
@@ -82,7 +79,6 @@
           <label>User Level* :</label>
           <select
             class="form-control "
-            placeholder="User Level"
             [formControl]="userLevel"
           >
             <option *ngFor="let pos of position" [value]="pos.name">
@@ -109,7 +105,6 @@
           <input
             type="text"
             class="form-control"
-            placeholder="Email"
             [formControl]="email"
           />
           <div
@@ -127,7 +122,6 @@
           <input
             type="text"
             class="form-control"
-            placeholder="Phone"
             [formControl]="phone"
           />
           <div
@@ -147,7 +141,6 @@
           <input
             type="text"
             class="form-control"
-            placeholder="Status"
             [formControl]="status"
           />
           <div
@@ -171,7 +164,7 @@
 </div>
 <div class="modal-footer">
   <button
-    type="button"
+    type="button"[disabled]="fullName.invalid || displayName.invalid || title.invalid || userLevel.invalid || email.invalid || phone.invalid || status.invalid"
     class="btn btn-primary"
     (click)="activeModal.close('Close click')"
     (click)="saveUser()"

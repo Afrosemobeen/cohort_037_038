@@ -11,6 +11,16 @@ import { CreateUserComponent } from '../create-user/create-user.component';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
+
+  filterModel: any={
+    fullName:"",
+  displayName:"",
+  title:"",
+  userLevel:"",
+  email:"",
+  phone:"",
+  status:""
+   }
   // fullName="";
   // displayName="";
   // title="";
@@ -118,6 +128,18 @@ this.status.reset()
 open() {
   const modalRef = this.modalService.open(CreateUserComponent);
   modalRef.componentInstance.name = 'World';
+}
+
+
+applyFilter(){ 
+  console.log(this.filterModel);
+   this.userService.filterModel={...this.filterModel};
+   this.userService.filterFlag="enabled"
+}
+clearFilter(){
+  console.log("From clear filter");
+  this.userService.filterModel={};
+  this.userService.filterFlag="disabled"
 }
 
 
