@@ -5,6 +5,6 @@ import { SharedModule } from './shared/shared.module';
   declarations: [AppComponent],
   imports: [SharedModule],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
