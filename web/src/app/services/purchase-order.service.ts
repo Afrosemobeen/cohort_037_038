@@ -43,7 +43,7 @@ export class PurchaseOrderService {
       state: ['', [Validators.required]],
       total_amt: ['', [Validators.required]],
       city: ['', [Validators.required]],
-      username: ['', [Validators.required, Validators.minLength(5)]],
+      username: ['', [Validators.required, Validators.minLength(3)]],
     });
   }
 
