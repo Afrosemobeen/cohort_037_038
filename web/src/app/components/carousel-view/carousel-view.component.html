@@ -1,0 +1,44 @@
+
+   <div class="Box">
+
+    <div>
+        <div class="button3 "><b>FullName:</b></div>
+        <div class="button4 "><b>Phone:</b></div>
+        <div class="button5 "><b>Title:</b></div> 
+        <div class="button1 " (click)="clearFilter()" ><b>Clear Filter</b></div>
+       <div class=" button2" routerLink="/filter" ><b>Edit Filter</b></div>
+    </div>
+    </div>
+    <section class="card">
+       <div class="container-fluid" >
+          <div class="slider-warp">
+    <div class="slider-main" >
+     <div class="item" *ngFor="let users of usersList" >
+        <div> 
+          <img src="/assets/images/female.jpg" width="150" height="110" style="vertical-align:middle; margin-top:10%;margin-left: 25%;margin-right: 50%;">
+            <div class="container">
+                <strong> Name:</strong>{{users.fullName}}<br>
+                <strong>Title:</strong>{{users.title}}<br>    
+                <strong>Phone No:</strong> {{users.phone}}<br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="400" height="50" fill="black" (click)="passDetails(users)" class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
+                  </svg>
+            </div>
+        </div>
+     </div>
+    </div>
+    </div>
+    <div class="button-area"> 
+        <!-- <mat-icon  [ngStyle]="prev?" appPrev>navigate_before</mat-icon> -->
+        <button class="prev" appPrev ><b><a>&#8249;</a></b>  </button>
+        <!-- <i style='font-size:24px' class='fas'>&#xf424;</i> -->
+        <button class="next" appNext ><b><a>&#8250;</a></b>  </button>
+    </div>
+    </div>
+</section> 
+
+<router-outlet></router-outlet>
+  <!-- <a routerLink="/users">gotousers</a> <br> -->
+
+
+   
