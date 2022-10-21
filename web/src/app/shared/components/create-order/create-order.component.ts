@@ -13,14 +13,20 @@ export class CreateOrderComponent implements OnInit {
   ponum: any = [];
   states: any = [];
   cities: any = [];
+  poNumbers: any = [];
   valid: boolean = true;
 
-  constructor(private purchaseOrderSer: PurchaseOrderService) {}
+  constructor(private purchaseOrderSer: PurchaseOrderService) {
+    this.purchaseOrderSer.getPoNumber().subscribe((data) => {
+      console.log(data);
+    });
+  }
 
   ngOnInit(): void {
     this.ponum = this.purchaseOrderSer.poNumber();
     this.states = this.purchaseOrderSer.states();
     this.cities = this.purchaseOrderSer.cities();
+    this.poNumbers = this.purchaseOrderSer.getPoNumber();
   }
 
   createOrder() {

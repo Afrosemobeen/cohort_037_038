@@ -22,23 +22,19 @@ export class PurchaseOrderService {
   updateOrder(orders: any) {
     return this.http.put('http://localhost:5000/orders/' + orders._id, orders);
   }
-//  getCity(){
-//   return this.http.get('http://localhost:5000/lookups/city');
-  
-//  }
+
   getOrderFormData() {
     return this.fbSer.group({
       _id: [''],
       po_num: ['', [Validators.required, RxwebValidators.unique()]],
-      // desc: [
-      //   '',
-      //   [
-      //     Validators.required,
-      //     Validators.minLength(10),
-      //     Validators.maxLength(50),
-      //   ],
-      // ],
-      desc: ['', [Validators.required,Validators.minLength(10),Validators.maxLength(50)]],
+      desc: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(10),
+          Validators.maxLength(50),
+        ],
+      ],
       date: ['', [Validators.required]],
       state: ['', [Validators.required]],
       total_amt: ['', [Validators.required]],
@@ -58,6 +54,10 @@ export class PurchaseOrderService {
       { po_num: 'PO7531' },
       { po_num: 'PO9518' },
     ];
+  }
+
+  getPoNumber() {
+    return this.http.get('http://localhost:6000/lookups/state');
   }
 
   states() {

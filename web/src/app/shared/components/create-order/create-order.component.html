@@ -3,7 +3,6 @@
     <div>
       <h3 class="title">PURCHASE ORDER</h3>
     </div>
-    
 
     <div style="background-color: white; overflow: hidden" class="col-md-12">
       <form [formGroup]="orderForm" (ngSubmit)="createOrder()">
@@ -53,24 +52,23 @@
               style="background-color: royalblue"
             ></textarea>
             <div
-            *ngIf="
-              (orderForm.controls['desc'].dirty ||
-              orderForm.controls['desc'].touched) &&
-              orderForm.controls['desc'].invalid
-            "
-            class="alert"
-          >
-            <p *ngIf="orderForm.controls['desc'].hasError('required')">
-              Description is required
-            </p>
-            <p *ngIf="orderForm.controls['desc'].hasError('minlength')">
-              Description  is required with minlength 10 characters
-            </p>
-            <p *ngIf="orderForm.controls['desc'].hasError('maxlength')">
-              Description is required with maxlength 50 characters
-            </p>
-          </div>
-
+              *ngIf="
+                (orderForm.controls['desc'].dirty ||
+                  orderForm.controls['desc'].touched) &&
+                orderForm.controls['desc'].invalid
+              "
+              class="alert"
+            >
+              <p *ngIf="orderForm.controls['desc'].hasError('required')">
+                Description is required
+              </p>
+              <p *ngIf="orderForm.controls['desc'].hasError('minlength')">
+                Description is required with minlength 10 characters
+              </p>
+              <p *ngIf="orderForm.controls['desc'].hasError('maxlength')">
+                Description is required with maxlength 50 characters
+              </p>
+            </div>
           </div>
 
           <div class="form-group col1">
@@ -121,7 +119,7 @@
                 {{ state.state }}
               </option>
             </select>
-           <div
+            <div
               *ngIf="
                 (orderForm.controls['state'].dirty ||
                   orderForm.controls['state'].touched) &&
@@ -132,7 +130,6 @@
               <p *ngIf="orderForm.controls['state'].hasError('required')">
                 state is required
               </p>
-            
             </div>
           </div>
 
@@ -195,10 +192,9 @@
               class="alert"
             >
               <p *ngIf="orderForm.controls['city'].hasError('required')">
-              City is required
+                City is required
               </p>
-          
-            </div> 
+            </div>
           </div>
           <div class="form-group col1">
             <i class="icon fa-solid fa-user"></i>
@@ -224,7 +220,6 @@
               <p *ngIf="orderForm.controls['username'].hasError('minlength')">
                 Minimum characters is 5
               </p>
-            
             </div>
           </div>
 

@@ -7,7 +7,7 @@ var app = express();
 app.use(express.json());
 app.use(cors());
 
-var mongoose = require("../backend/db/db");
+var mongoose = require("../backend/db/db_lookups");
 
 //step 4- developing services
 app.get("/", function (req, res) {
@@ -15,10 +15,10 @@ app.get("/", function (req, res) {
   res.send("Welcome to orders application");
 });
 
-app.use(require("./routes/order_routes"));
+app.use(require("./routes/state_routes"));
 
 //step 3- register aplication with port
-app.listen(5000, function (err) {
+app.listen(6000, function (err) {
   if (err) {
     console.log("error occurred while listening port");
     console.log(err);
@@ -26,7 +26,7 @@ app.listen(5000, function (err) {
   }
   if (!err) {
     console.log(
-      " Purchase order Application started successfully and listening on port 5000"
+      " Lookups Application started successfully and listening on port 5000"
     );
   }
 });
