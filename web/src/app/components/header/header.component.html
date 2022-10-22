@@ -1,23 +1,8 @@
- <div class="container" stylr="padding: 4%">
-  <div class="search"  style="text-align: center">
-    
-    <mat-form-field appearance="fill">
-      <mat-label style="color:blue">select</mat-label>
-      <mat-select  (selectionChange)="lookupChangeHandler($event)">
-       
-        <mat-option value="state">State</mat-option>
-        <mat-option value="city">City</mat-option>
-        <mat-option value="ponumber">Po Number</mat-option>
-        <mat-option value="title">Title</mat-option>
-        <mat-option value="status">Status</mat-option>
-    
-      </mat-select>
-      
-    </mat-form-field>
-    <!-- <div class="col-md-2">
-      <label>select</label>
-      <select class="form-select" aria-label="Default select example" (selectionChange)="lookupChangeHandler($event)">
-        <option selected> Selection menu</option>
+
+    <div class="col-md-2">
+     
+      <select class="form-select" aria-label="dropdownMenuLink" #lookups (change)="lookupChangeHandler(lookups.value)">
+        <option default><select name="" id=""></select></option>
         <option value="state">State</option>
         <option value="city">City</option>
         <option value="ponumber">PO Number</option>
@@ -26,9 +11,9 @@
       </select>
 
     </div>
-     -->
-  </div> 
-</div>
+    
  
  
 
+
+ 

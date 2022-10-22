@@ -4,7 +4,7 @@ import { ManageserviceService } from 'src/app/services/manageservice.service';
 @Component({
   selector: 'app-display-lookup-types',
   templateUrl: './display-lookup-types.component.html',
-  styleUrls: ['./display-lookup-types.component.css']
+  styleUrls: ['./display-lookup-types.component.scss']
 })
 export class DisplayLookupTypesComponent implements OnInit {
 

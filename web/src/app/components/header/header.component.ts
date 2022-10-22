@@ -5,7 +5,7 @@ import {ManageserviceService} from 'src/app/services/manageservice.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
   @Output() onChangeLookup : EventEmitter<any>
@@ -22,8 +22,8 @@ ngOnInit(): void {
 
 lookupChangeHandler(lookup: any){
   console.log("lookup:", lookup);
-  this.lookupInfo.lookupType=lookup.value
-   this.manageSer.getLookupsByType(lookup.value)
+  this.lookupInfo.lookupType=lookup
+   this.manageSer.getLookupsByType(lookup)
     .subscribe({
       next: (data: any)=>{
         console.log("data:",data);
