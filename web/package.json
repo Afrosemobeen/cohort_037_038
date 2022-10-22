@@ -50,7 +50,6 @@
   },
   "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.",
   "main": "karma.conf.js",
-<<<<<<< HEAD
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Afrosemobeen/cohort_037_038.git"
@@ -61,8 +60,4 @@
     "url": "https://github.com/Afrosemobeen/cohort_037_038/issues"
   },
   "homepage": "https://github.com/Afrosemobeen/cohort_037_038#readme"
-=======
-  "author": "",
-  "license": "ISC"
->>>>>>> 1e2e3546bce29ac3282f48b49711d6cd9b9feb66
 }

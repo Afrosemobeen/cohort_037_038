@@ -57,7 +57,7 @@ export class PurchaseOrderService {
   }
 
   getPoNumber() {
-    return this.http.get('http://localhost:6000/lookups/state');
+    return this.http.get('http://localhost:5000/lookups/ponumber');
   }
 
   states() {
