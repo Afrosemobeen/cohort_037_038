@@ -3,7 +3,7 @@ var cors = require("cors");
 
 //var url = "mongodb://localhost:27017/purchase_db";
 var url =
-  "mongodb+srv://snehal:snehalrajapurkar@cluster0.tvgmds2.mongodb.net/purchase_db";
+  "mongodb+srv://nandhini:nansn@cluster0.hgqctst.mongodb.net/angular_project";
 
 mongoose
   .connect(url)
