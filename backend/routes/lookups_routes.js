@@ -1,7 +1,9 @@
-var express = require("express");
-var lookup_operations = require("../controllers/lookups_controller");
-var router = express.Router();
+// var express = require("express");
+// var lookup_operations = require("../controllers/order_controllers");
+// var router = express.Router();
 
-router.get("/lookups/:lookup_type", lookup_operations.getLookups);
+// const { Router } = require("express");
 
-module.exports = router;
+// router.get("/lookups/:lookup_type", lookup_operations.getLookups);
+
+// module.exports = router;
