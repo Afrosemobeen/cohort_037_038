@@ -1,34 +1,43 @@
-<div class="container" style="padding-left: 30px;">
-  
-    <table class="table table-bordered table-md" >
+<div class="container bg-primary w-75 " style="padding-left: 30px; ">
+  <div class="bg-white p-2 ">
+    <table class="table table-bordered table-sm bg-primary " >
         <thead style="text-align: center;">
-            <tr>
-               <th>Value</th>
-               <th>Status</th>
+            <tr class="bg-primary text-white" >
+               <th>Value  </th>
+               <th>Status </th>
             </tr>
         </thead>
-        <tbody style="text-align: center;" > 
-            <tr  *ngFor="let lookup of lookupInfo.lookupTypeItems | paginate:{itemsPerPage: 5, currentPage: p};">
+        <tbody class="bg-tablecolor" style="text-align: center;" > 
+            <tr  *ngFor="let lookup of lookupInfo.lookupTypeItems  | paginate:{itemsPerPage: 5, currentPage: p}; ">
                 <td>{{lookup.lookup_value}}</td>
                 <td>{{lookup.status}}</td>
             </tr>
         </tbody>
+        <br>
         <pagination-controls (pageChange)="p= $event"> </pagination-controls>
-    </table>
- 
-    <div class="col-md-12" style="text-align:center">
+        </table>
+  </div>
+    
+ <div class="bg-primary p-4">
+    <div class="col-md-12   " style="text-align:center">
         
         <label>
-          <div class="input-group mb-4">
-            <input type="text" class="form-control" placeholder="Dropdown Values" [(ngModel)]="newLookupValue">
-              <div>
-              <button (click)="createLookup()">add</button>
+          <div class="input-group lg-12 ">
+            <input type="text" class="form-control " placeholder="Dropdown Values " [(ngModel)]="newLookupValue">
+              <div >
+              <!-- <button (click)="createLookup()" type="button" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+                  </svg>
+              </button> -->
+              <!-- <i (click)="createLookup()" class="fa-fa-plus" style="font-size:36px"> </i> -->
+              <button (click)="createLookup()" class="btn"><i class="fa fa-plus"style="font-size:36px"></i></button>
               </div>
           </div>
         </label>
    
     </div>
-
+</div>
 </div>
 
 

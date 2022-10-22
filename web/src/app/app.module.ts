@@ -10,10 +10,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule} from '@angular/material/select';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { CommonComponent } from './components/common/common.component'
-import { NgxPaginationModule } from 'ngx-pagination';
+
 import {MatIconModule} from '@angular/material/icon';
 import { DisplayLookupTypesComponent } from './components/display-lookup-types/display-lookup-types.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 

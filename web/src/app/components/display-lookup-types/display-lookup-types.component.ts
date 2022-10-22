@@ -37,7 +37,7 @@ export class DisplayLookupTypesComponent implements OnInit {
         console.log("filteredLookups", filteredLookups);
         
        if(filteredLookups.length > 0){
-        alert("duplicate value");
+        alert("duplicate value or invalid value");
        }
        else{
         let newLookupObj = {
