@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {NavServiceService} from 'app/nav-module/services/nav-service.service'
+import {NavServiceService} from 'app/nav-module/services/nav-service.service';
+import { FormArray, FormBuilder, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -18,7 +19,7 @@ id:any =-1;
      navitem:any=[];
   navdatas: any;
  
-constructor(private router: Router, private navService:NavServiceService) { 
+constructor(private fb: FormBuilder,private router: Router, private navService:NavServiceService) { 
   
 }
   ngOnInit(): void {
