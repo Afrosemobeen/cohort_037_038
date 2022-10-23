@@ -16,15 +16,13 @@ export class HeaderComponent implements OnInit {
   const data = this.navService.sendDataToHeader();
     data.subscribe({
       next: (_data:any)=>{
-          //console.log("elsfpdkfpoesop")
+        
           this.navService.getNavFromDatabase()
     .subscribe({
       next: (data:any)=>{
-        // console.log("Data:",data);
+       
         this.serNav = structuredClone(data);
-        // this.sendnavhardcopy = structuredClone(this.serNav);
-        // this.navService .sendInitialDataToService(data);
-        // console.log("rigjiofvafdkfpldskvdlvldddddddddddddddddddddddd")
+       
       },
       error: ()=>{},
       complete: ()=>{},

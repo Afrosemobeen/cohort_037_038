@@ -25,7 +25,7 @@ constructor(private router: Router, private navService:NavServiceService) {
           this.navService.getNavFromDatabase()
   .subscribe({
     next: (data:any)=>{
-      // console.log("Data:",data);
+      
       this.navitem = structuredClone(data);
       console.log( "form Nav edit"+data)
       this.navdata = structuredClone(data);
@@ -40,14 +40,14 @@ title = 'toolsets';
   
    isChecked: any;
   onChangenavList($event:any) {
-  // this.event = $event;
+  
     this.id = $event.target.value;
     this.isChecked = $event.target.checked;
 
     this.navitem = this.navitem.map((d: { id: any; select: boolean; }) => {
       if (d.id == this.id) {
         d.select = this.isChecked;
-        // this.parentSelector = false;
+        
         return d;
       }
       if (this.id == -1) {
@@ -82,7 +82,7 @@ title = 'toolsets';
       next:(_data:any)=>{
         console.log("passed data to datbase else");
         setTimeout(() => {  this.navService.putDataFromEditNavToService(this.navdata) }, 100);
-        // this.navService .putDataFromEditNavToService(this.navdata);                                        //         used for calling the side nav on change
+                                             
       }
     })
     }
