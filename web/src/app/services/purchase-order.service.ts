@@ -8,6 +8,9 @@ import { RxwebValidators } from '@rxweb/reactive-form-validators';
 })
 export class PurchaseOrderService {
   orderList: any = [];
+  poNumbers: any = [];
+  states: any = [];
+  cities: any = [];
   constructor(private http: HttpClient, private fbSer: FormBuilder) {}
   getAllOrders() {
     return this.http.get('http://localhost:5000/orders');
@@ -43,42 +46,16 @@ export class PurchaseOrderService {
     });
   }
 
-  poNumber() {
-    return [
-      { po_num: 'PO1234' },
-      { po_num: 'PO4562' },
-      { po_num: 'PO7859' },
-      { po_num: 'PO7856' },
-      { po_num: 'PO8524' },
-      { po_num: 'PO4569' },
-      { po_num: 'PO7531' },
-      { po_num: 'PO9518' },
-    ];
-  }
-
   getPoNumber() {
     return this.http.get('http://localhost:5000/lookups/ponumber');
   }
 
-  states() {
-    return [
-      { state: 'Karnataka' },
-      { state: 'Maharashtra' },
-      { state: 'Jammu and Kashmir' },
-      { state: 'Rajasthan' },
-    ];
+  getStates() {
+    return this.http.get('http://localhost:5000/lookups/state');
   }
 
-  cities() {
-    return [
-      { city: 'Belagavi' },
-      { city: 'Dharwad' },
-      { city: 'Kolhapur' },
-      { city: 'Pune' },
-      { city: 'Cargill' },
-      { city: 'Doda' },
-      { city: 'Jaipur' },
-      { city: 'Udaipur' },
-    ];
+  getCities() {
+    return this.http.get('http://localhost:5000/lookups/city');
+
   }
 }

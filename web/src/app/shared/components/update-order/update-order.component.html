@@ -138,8 +138,8 @@
             >
               <option>Select PO number</option>
 
-              <option *ngFor="let poNumbers of ponum">
-                {{ poNumbers.po_num }}
+              <option *ngFor="let poNumber of purchaseOrderSer.poNumbers">
+                {{ poNumber.lookup_value }}
               </option>
             </select>
 
@@ -235,8 +235,8 @@
             >
               <option>Select state</option>
 
-              <option *ngFor="let state of states">
-                {{ state.state }}
+              <option *ngFor="let state of purchaseOrderSer.states">
+                {{ state.lookup_value }}
               </option>
             </select>
             <!-- <div
@@ -305,8 +305,8 @@
             >
               <option>Select city</option>
 
-              <option *ngFor="let city of cities">
-                {{ city.city }}
+              <option *ngFor="let city of purchaseOrderSer.cities">
+                {{ city.lookup_value }}
               </option>
             </select>
             <!-- <div

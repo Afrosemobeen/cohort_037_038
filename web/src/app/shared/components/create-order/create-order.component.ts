@@ -10,23 +10,33 @@ import { __values } from 'tslib';
 })
 export class CreateOrderComponent implements OnInit {
   orderForm = this.purchaseOrderSer.getOrderFormData();
-  ponum: any = [];
   states: any = [];
   cities: any = [];
   poNumbers: any = [];
   valid: boolean = true;
 
-  constructor(private purchaseOrderSer: PurchaseOrderService) {
-    this.purchaseOrderSer.getPoNumber().subscribe((data) => {
-      console.log(data);
-    });
+  constructor(public purchaseOrderSer: PurchaseOrderService) {
+    // this.purchaseOrderSer.getPoNumber().subscribe((data) => {
+    //   console.log(data);
+    // });
   }
 
   ngOnInit(): void {
-    this.ponum = this.purchaseOrderSer.poNumber();
-    this.states = this.purchaseOrderSer.states();
-    this.cities = this.purchaseOrderSer.cities();
-    this.poNumbers = this.purchaseOrderSer.getPoNumber();
+    this.states = this.purchaseOrderSer.getStates().subscribe((data: any) => {
+      console.log(data);
+      this.purchaseOrderSer.states = data;
+      this.states = data;
+    });
+    this.cities = this.purchaseOrderSer.getCities().subscribe((data: any) => {
+      console.log(data);
+      this.purchaseOrderSer.cities = data;
+      this.cities = data;
+    });
+    this.poNumbers = this.purchaseOrderSer.getPoNumber().subscribe((data) => {
+      console.log(data);
+      this.purchaseOrderSer.poNumbers = data;
+      this.poNumbers = data;
+    });
   }
 
   createOrder() {
