@@ -1,9 +1,16 @@
-// var express = require("express");
-// var lookup_operations = require("../controllers/order_controllers");
-// var router = express.Router();
+// var express = require('express');
+// var Lookups = require("../controllers/lookups_controller");
+// var router = express.Router()
 
-// const { Router } = require("express");
+// router.get("/lookups/:lookup_type", Lookups.getLookups)
 
-// router.get("/lookups/:lookup_type", lookup_operations.getLookups);
+// router.post("/lookups", Lookups.createLookup)
 
+// router.put("/lookups/:_id", Lookups.updateLookup)
+
+// router.delete("/lookups/:_id", Lookups.deleteLookup)
+
+//
+
+// router.get("/lookups/:lookup_type", order_operations.getLookups);
 // module.exports = router;

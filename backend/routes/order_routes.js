@@ -14,4 +14,6 @@ router.put("/orders/:_id", order_operations.updateOrder);
 
 router.get("/lookups/:lookup_type", order_operations.getLookups);
 
+router.get("/lookups", order_operations.getAllLookups);
+
 module.exports = router;

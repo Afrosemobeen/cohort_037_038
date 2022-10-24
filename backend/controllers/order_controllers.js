@@ -2,6 +2,13 @@ const Order = require("../models/order");
 
 const Lookup = require("../models/lookup");
 
+exports.getAllLookups = function (req, res) {
+  console.log("I am from getAllLookups");
+  Lookup.find().exec(function (err, result) {
+    res.send(result);
+  });
+};
+
 exports.getLookups = function (req, res) {
   console.log("from getlookups service");
   const { body, params, query } = req;
