@@ -14,14 +14,15 @@ export class CreateOrderComponent implements OnInit {
   cities: any = [];
   poNumbers: any = [];
   valid: boolean = true;
+  selectedCountry: any = {
+    id: '0',
+    name: '',
+  };
 
-  constructor(public purchaseOrderSer: PurchaseOrderService) {
-    // this.purchaseOrderSer.getPoNumber().subscribe((data) => {
-    //   console.log(data);
-    // });
-  }
+  constructor(public purchaseOrderSer: PurchaseOrderService) {}
 
   ngOnInit(): void {
+    //this.showAll();
     this.states = this.purchaseOrderSer.getStates().subscribe((data: any) => {
       console.log(data);
       this.purchaseOrderSer.states = data;
@@ -70,4 +71,20 @@ export class CreateOrderComponent implements OnInit {
   clearForm() {
     this.orderForm.reset();
   }
+
+  // showAll() {
+  //   this.purchaseOrderSer.getAll().subscribe((data: any) => {
+  //     this.states = data;
+  //     console.log(this.states);
+  //   });
+  // }
+
+  // onSelect(country_id: any) {
+  //   this.purchaseOrderSer.getAll().subscribe((res: any) => {
+  //     (this.states = res['states'].filter(
+  //       (res: any) => res.country_id == country_id!.value
+  //     )),
+  //       console.log(this.states);
+  //   });
+  // }
 }

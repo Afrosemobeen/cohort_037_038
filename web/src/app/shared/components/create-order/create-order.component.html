@@ -34,12 +34,6 @@
               <p *ngIf="orderForm.controls['po_num'].hasError('required')">
                 Po number is required!!
               </p>
-              <!-- <p *ngIf="orderForm.controls['po_num'].hasError('unique')">
-                 This Po number is taken
-              </p> -->
-              <!-- <p *ngIf="orderForm.controls['po_num'].hasError('max')">
-                Maximum salary should be 100000
-              </p> -->
             </div>
           </div>
 
@@ -90,35 +84,25 @@
               <p *ngIf="orderForm.controls['date'].hasError('required')">
                 Date is required!!
               </p>
-              <!-- <p *ngIf="orderForm.controls['date'].hasError('min')">
-                Minimum salary should be 10000
-              </p>
-              <p *ngIf="orderForm.controls['date'].hasError('max')">
-                Maximum salary should be 100000
-              </p> -->
             </div>
           </div>
           <div class="form-group col2">
             <i class="icon fa-solid fa-chevron-down"></i>
             <label class="important">State</label>
-            <!-- <input
-              type="text"
-              class="form-control"
-              formControlName="state"
-              style="background-color: royalblue"
-            /> -->
+
             <select
               id="state"
               class="col1 form-control"
               formControlName="state"
               style="background-color: royalblue"
             >
-              <option>Select state</option>
+              <option value="0">Select state</option>
 
               <option *ngFor="let state of purchaseOrderSer.states">
                 {{ state.lookup_value }}
               </option>
             </select>
+
             <div
               *ngIf="
                 (orderForm.controls['state'].dirty ||
@@ -153,24 +137,13 @@
               <p *ngIf="orderForm.controls['total_amt'].hasError('required')">
                 Amount is required
               </p>
-              <!-- <p *ngIf="orderForm.controls['total_amt'].hasError('min')">
-                Minimum amount should be 10000
-              </p>
-              <p *ngIf="orderForm.controls['total_amt'].hasError('max')">
-                Maximum salary should be 100000
-              </p> -->
             </div>
           </div>
 
           <div class="form-group col2">
             <i class="icon fa-solid fa-chevron-down"></i>
             <label class="important">City</label>
-            <!-- <input
-              type="text"
-              class="form-control"
-              formControlName="city"
-              style="background-color: royalblue"
-            /> -->
+
             <select
               id="city"
               class="col1 form-control"

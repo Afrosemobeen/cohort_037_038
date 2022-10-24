@@ -46,6 +46,10 @@ export class PurchaseOrderService {
     });
   }
 
+  getAll() {
+    return this.http.get('http://localhost:5000/lookups');
+  }
+
   getPoNumber() {
     return this.http.get('http://localhost:5000/lookups/ponumber');
   }
@@ -56,6 +60,5 @@ export class PurchaseOrderService {
 
   getCities() {
     return this.http.get('http://localhost:5000/lookups/city');
-
   }
 }
