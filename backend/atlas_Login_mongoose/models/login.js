@@ -3,7 +3,7 @@ var mongoose = require('../db/db');
 //Create Schema
 var empSchema = new mongoose.Schema({
     username: String, 
-    password: String || Number,
+    password: String 
     
 },{
     versionKey: false,
