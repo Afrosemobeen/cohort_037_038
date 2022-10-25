@@ -53,6 +53,9 @@
           <div *ngIf="loginForm.controls['password'].hasError('minlength')">
             Password must be at least 6 characters
           </div>
+          <div *ngIf="loginForm.controls['password'].hasError('maxlength')">
+            Password must not exceed 15 characters
+          </div>
         </div>
       </div>
       <button class="btn btn-danger mx- my-4">LOGIN</button><br />

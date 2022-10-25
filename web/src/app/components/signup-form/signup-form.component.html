@@ -25,6 +25,9 @@
                     <div *ngIf="signupForm.controls['password'].hasError('minlength')">
                       Password must be at least 6 characters
                     </div>
+                    <div *ngIf="signupForm.controls['password'].hasError('maxlength')">
+                        Password must not exceed 15 characters
+                      </div>
                 </div>
             
             </div>

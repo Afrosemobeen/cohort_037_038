@@ -17,7 +17,7 @@ export class LoginFormComponent implements OnInit {
      private http: HttpClient, private router: Router, private toastr: ToastrService) { 
     this.loginForm =  this.fb.group({
       email: ['', [Validators.required,Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]],
      
     }
     );
