@@ -21,7 +21,7 @@
 
               <option
                 *ngFor="let poNumber of purchaseOrderSer.poNumbers"
-                [value]="poNumber._id"
+                [value]="poNumber.lookup_value"
               >
                 {{ poNumber.lookup_value }}
               </option>
@@ -125,7 +125,7 @@
             <i class="icon fa-solid fa-indian-rupee-sign"></i>
             <label class="important">Total Amount</label>
             <input
-              type="text"
+              type="number"
               class="form-control"
               formControlName="total_amt"
               style="background-color: royalblue"
