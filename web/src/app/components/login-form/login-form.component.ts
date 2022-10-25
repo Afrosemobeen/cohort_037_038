@@ -3,7 +3,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { LoginService } from 'app/services/login.service';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -13,7 +13,8 @@ export class LoginFormComponent implements OnInit {
   loginForm: FormGroup;
   errMessage= "";
   submitted = false;
-  constructor(private loginSer: LoginService,private fb: FormBuilder, private http: HttpClient, private router: Router) { 
+  constructor(private loginSer: LoginService,private fb: FormBuilder,
+     private http: HttpClient, private router: Router, private toastr: ToastrService) { 
     this.loginForm =  this.fb.group({
       email: ['', [Validators.required,Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -37,9 +38,10 @@ export class LoginFormComponent implements OnInit {
 
       if(result.length>0){
         //alert("You are successfully logged in");
-        this.errMessage = "You are successfully logged in";
+        //this.errMessage = "You are successfully logged in";
+        this.toastr.success('You are successfully logged in');
          this.loginForm.reset();
-         this.router.navigate(['dashboard']);
+         this.router.navigate(['nav-edit']);
        }
        else{
         this.errMessage = "Invalid username or password";

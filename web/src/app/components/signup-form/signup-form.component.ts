@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from 'app/services/login.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-signup-form',
   templateUrl: './signup-form.component.html',
@@ -12,7 +14,8 @@ export class SignupFormComponent implements OnInit {
   signupForm: FormGroup;
   errMessage= "";
   submitted = false;
-  constructor(private loginSer: LoginService,private fb: FormBuilder, private http: HttpClient) { 
+  constructor(private loginSer: LoginService,private fb: FormBuilder, 
+    private http: HttpClient,  private router: Router, private toastr: ToastrService) { 
     this.signupForm =  this.fb.group({
       username: ['', [Validators.required,Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -43,7 +46,9 @@ export class SignupFormComponent implements OnInit {
         }
       this.errMessage = "";
         console.log("result:", result);
-        alert("sign up successful");
+        //alert("sign up successful");
+        this.toastr.success("Signed up successfully!");
+        this.router.navigate(['login']);
         this.signupForm.reset();
       },
         error: ()=>{
