@@ -1,39 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { NavModuleModule } from './nav-module/nav-module.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ToastrModule } from 'ngx-toastr';
-import { HttpClientModule } from '@angular/common/http';
-import { LoginFormComponent } from './components/login-form/login-form.component';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-
-
+import { LoginModule } from './login-module/login/login.module';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginFormComponent } from 'app/components/login-form/login-form.component';
 @NgModule({
   declarations: [
     AppComponent,
-    
-    LoginFormComponent,
     SignupFormComponent,
-    DashboardComponent,
-   
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NavModuleModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule,
-    ToastrModule.forRoot(),
-    BrowserAnimationsModule
-    
+    NavModuleModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent],
