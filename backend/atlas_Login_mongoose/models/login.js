@@ -10,9 +10,6 @@ var empSchema = new mongoose.Schema({
     
 })
 
-
-
-
 //Step 2
 //Create model
 var Emp = mongoose.model("users", empSchema)
