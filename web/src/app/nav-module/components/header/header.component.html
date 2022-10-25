@@ -27,10 +27,10 @@
               </a>
       <ul >  
         <div class="dropdown-menu my-2" style="right:0;left:auto;width: 220px;;">
-        <li class="my-2"><i class="fa fa-user-circle-o px-2" aria-hidden="true"></i>Dheeraj Patel</li>
-        <li class="my-2"><i class="fa fa-id-badge px-2" aria-hidden="true"></i> Entry level trainee</li>
+        <li class="my-2" *ngIf="userdata"><i class="fa fa-user-circle-o px-2" aria-hidden="true"></i>{{userdata[0]?.name}}</li>
+        <li class="my-2" *ngIf="userdata"><i class="fa fa-id-badge px-2" aria-hidden="true"></i> {{userdata[0]?.title}}</li>
         <li class="my-2">
-            <a href="#" class="text-dark text-decoration-none">
+            <a  class="text-dark text-decoration-none" type="button" (click)="logout()">
             <span class="glyphicon glyphicon-log-out "></span><i class="fa fa-sign-out px-2" ></i>Log out
             </a>
         </li></div>

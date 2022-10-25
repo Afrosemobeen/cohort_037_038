@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {NavServiceService} from 'app/nav-module/services/nav-service.service'
 
 @Component({
@@ -9,7 +10,16 @@ import {NavServiceService} from 'app/nav-module/services/nav-service.service'
 export class HeaderComponent implements OnInit {
   pagetitle: String ="";
   public serNav:any=[];
-  constructor( private navService:NavServiceService) {}
+  userdata: any;
+  constructor( private navService:NavServiceService, private router: Router) {
+    this.navService.sendUserDataToheader().subscribe({
+  next:(data:any)=>{
+    this.userdata = structuredClone(data);
+  },
+  error:()=>{},
+  complete:()=>{}
+})
+  }
    
     ngOnInit(): void {
   
@@ -38,5 +48,11 @@ export class HeaderComponent implements OnInit {
   pageHeading(pagetitle:String){
   this.pagetitle = pagetitle;
   }
+
+  logout(){
+  this.router.navigate(['/extra']);
+  this.navService.userDataForDropdown.next(null as any);
+}
+
   
   }

@@ -7,6 +7,12 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 })
 export class NavServiceService {
  private myMethodSubject = new BehaviorSubject<any>(""); 
+ // added sample data to the below userdatafordropdown but originally data will come after login send to service using sendUserDataToServices() function created below
+     userDataForDropdown = new BehaviorSubject<any>([{
+username:"aman",
+name:"aman kumar",
+title:"director"}]);     
+
   constructor(private http: HttpClient) { }
   
 // for backend part
@@ -23,5 +29,14 @@ export class NavServiceService {
   putDataFromEditNavToService(data:any){
     this.myMethodSubject.next(data);                     
   } 
+
+      // communication for user data dropdown
+    sendUserDataToServices(data:any){
+      this.userDataForDropdown.next(data);
+    }
+
+    sendUserDataToheader(){
+      return this.userDataForDropdown.asObservable();
+    }
 
 }
