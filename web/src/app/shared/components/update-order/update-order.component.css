@@ -17,8 +17,9 @@ body {
 
 .icon {
   position: absolute;
-  top: calc(50%);
+  top: calc(60%);
   right: 2rem;
+
   color: black;
 }
 
@@ -62,20 +63,25 @@ label {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .form-group {
-  padding: 18px;
+  padding: 18px 18px 6px 18px;
 }
-.container .card {
-  margin-top: 10px;
-}
+
 .form-control {
   color: white;
 }
+
 label.important:after {
   content: " *";
   color: red;
 }
-.alert {
+
+p {
   color: red;
+  margin: 0;
+  padding: 0;
+}
+
+.alert {
   margin: 0;
   padding: 0;
 }

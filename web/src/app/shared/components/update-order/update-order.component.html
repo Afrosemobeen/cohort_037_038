@@ -15,6 +15,7 @@
               class="col1 form-control"
               formControlName="po_num"
               style="background-color: royalblue"
+              (change)="selectedPo($event)"
             >
               <option>Select PO number</option>
 
@@ -22,7 +23,9 @@
                 {{ poNumber.lookup_value }}
               </option>
             </select>
-
+            <p style="color: red" *ngIf="this.flag">
+              This Po number already exists
+            </p>
             <div
               *ngIf="
                 (orderForm.controls['po_num'].dirty ||
@@ -34,12 +37,6 @@
               <p *ngIf="orderForm.controls['po_num'].hasError('required')">
                 Po number is required!!
               </p>
-              <p *ngIf="orderForm.controls['po_num'].hasError('unique')">
-                This Po number is taken
-              </p>
-              <!-- <p *ngIf="orderForm.controls['po_num'].hasError('max')">
-                Maximum salary should be 100000
-              </p> -->
             </div>
           </div>
 

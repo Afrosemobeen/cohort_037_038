@@ -17,7 +17,7 @@ body {
 
 .icon {
   position: absolute;
-  top: calc(50%);
+  top: calc(60%);
   right: 2rem;
   color: black;
 }
@@ -33,12 +33,10 @@ body {
 
 .two-col .col1 {
   float: left;
-  
 }
 
 .two-col .col2 {
   float: right;
- 
 }
 
 input[type="text"],
