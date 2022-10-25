@@ -15,8 +15,7 @@ id:any =-1;
 
   navdata:any = [];
   event: any;
-  
-     navitem:any=[];
+  navitem:any=[];
   navdatas: any;
 
   
@@ -48,7 +47,6 @@ title = 'toolsets';
     this.id = $event.target.value;
     this.isChecked = $event.target.checked;
 
-    this.isdisabled=false;
 
     this.navitem = this.navitem.map((d: { id: any; select: boolean; }) => {
       if (d.id == this.id) {
@@ -61,6 +59,13 @@ title = 'toolsets';
       }
       return d;
     });
+
+        if(JSON.stringify(this.navitem) == JSON.stringify(this.navdatas)){
+    this.isdisabled= true
+    }
+    else{
+      this.isdisabled = false;
+    }
 }
 
     saveNavList(){
@@ -91,7 +96,9 @@ title = 'toolsets';
       }
     })
     }
+    // for save button logic
     this.isdisabled=true;
+    this.navdatas = structuredClone(this.navdata);
 
   }
   closeUserSetting(){
