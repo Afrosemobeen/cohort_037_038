@@ -14,6 +14,7 @@ export class CreateOrderComponent implements OnInit {
   cities: any = [];
   poNumbers: any = [];
   valid: boolean = true;
+  id: any = '';
   selectedCountry: any = {
     id: '0',
     name: '',
@@ -40,12 +41,15 @@ export class CreateOrderComponent implements OnInit {
     });
   }
 
+  selectedPo(e: any) {
+    this.id = e.target.value;
+    console.log(e.target.value);
+  }
+
   createOrder() {
     console.log('orderForm:', this.orderForm.value);
 
     if (!this.orderForm.valid) {
-      // alert('data are missing in some fields');
-      // return;
       this.valid = false;
     }
     const order = {

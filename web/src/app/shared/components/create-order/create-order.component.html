@@ -15,10 +15,14 @@
               class="col1 form-control"
               formControlName="po_num"
               style="background-color: royalblue"
+              (change)="selectedPo($event)"
             >
               <option>Select PO number</option>
 
-              <option *ngFor="let poNumber of purchaseOrderSer.poNumbers">
+              <option
+                *ngFor="let poNumber of purchaseOrderSer.poNumbers"
+                [value]="poNumber._id"
+              >
                 {{ poNumber.lookup_value }}
               </option>
             </select>

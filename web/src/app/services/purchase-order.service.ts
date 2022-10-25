@@ -9,6 +9,7 @@ import { RxwebValidators } from '@rxweb/reactive-form-validators';
 export class PurchaseOrderService {
   orderList: any = [];
   poNumbers: any = [];
+  numSelected: String = '';
   states: any = [];
   cities: any = [];
   constructor(private http: HttpClient, private fbSer: FormBuilder) {}
@@ -52,6 +53,7 @@ export class PurchaseOrderService {
 
   getPoNumber() {
     return this.http.get('http://localhost:5000/lookups/ponumber');
+    this.numSelected;
   }
 
   getStates() {
