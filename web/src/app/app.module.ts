@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselViewComponent } from './components/carousel-view/carousel-view.component';
 import { UsersDetailsComponent } from './components/users-details/users-details.component'; import { HeaderComponent } from './components/header/header.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PrevDirective } from './prev.directive';
 import { NextDirective } from './next.directive';
@@ -21,6 +22,7 @@ import { NextDirective } from './next.directive';
     PrevDirective,
     CarouselViewComponent,
     UsersDetailsComponent,
+    HeaderComponent,
     FilterComponent
 
   ],
