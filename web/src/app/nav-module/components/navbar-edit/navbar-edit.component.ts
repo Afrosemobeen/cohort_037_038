@@ -18,6 +18,8 @@ id:any =-1;
   
      navitem:any=[];
   navdatas: any;
+
+  
  
 constructor(private fb: FormBuilder,private router: Router, private navService:NavServiceService) { 
   
@@ -38,12 +40,15 @@ constructor(private fb: FormBuilder,private router: Router, private navService:N
   }
 title = 'toolsets';
   parentSelector: boolean = true;
-  
+  isdisabled=true;
+
    isChecked: any;
   onChangenavList($event:any) {
   
     this.id = $event.target.value;
     this.isChecked = $event.target.checked;
+
+    this.isdisabled=false;
 
     this.navitem = this.navitem.map((d: { id: any; select: boolean; }) => {
       if (d.id == this.id) {
@@ -72,7 +77,6 @@ title = 'toolsets';
   {
     
   this.error = false;
-  alert("USER SETTING SAVED");
   console.log(this.navitem);
   let result = this.navitem.map((a: { select: boolean; }) => a.select);
   console.log(result);  
@@ -87,6 +91,8 @@ title = 'toolsets';
       }
     })
     }
+    this.isdisabled=true;
+
   }
   closeUserSetting(){
     this.router.navigate(['/'])
