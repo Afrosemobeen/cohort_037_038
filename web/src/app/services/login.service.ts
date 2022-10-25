@@ -7,9 +7,9 @@ import { Injectable } from '@angular/core';
 export class LoginService {
   signupForm: any=[];
   constructor(private http: HttpClient) { }
-  getUser(){
-    return   this.http.get("http://localhost:5000/users")
-  }
+  // getUser(){
+  //   return   this.http.get("http://localhost:5000/users")
+  // }
   createUser(user: any){
     console.log("value: ", this.signupForm);
     return  this.http.post("http://localhost:5000/users", user)
