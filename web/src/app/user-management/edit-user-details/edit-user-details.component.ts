@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Validators , FormBuilder} from '@angular/forms';
-import { UserServiceService } from 'src/app/services/user-service.service';
+import { UserServiceService } from '../../services/user-service.service'
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-edit-user-details',

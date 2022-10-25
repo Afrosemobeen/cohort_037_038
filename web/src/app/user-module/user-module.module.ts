@@ -8,17 +8,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatIconModule} from '@angular/material/icon'
+import { MatIconModule} from '@angular/material/icon';
 import { Ng2OrderModule } from 'ng2-order-pipe';
-import { CreateUserComponent } from '../user-management/create-user/create-user.component'
-import { EditUserDetailsComponent } from '../user-management/edit-user-details/edit-user-details.component'
+// import { CreateUserComponent } from '../user-management/create-user/create-user.component.spec';
+import { EditUserDetailsComponent } from '../user-management/edit-user-details/edit-user-details.component';
 @NgModule({
   declarations: [
-    UserOperationsComponent,
+    
+    EditUserDetailsComponent,
     DisplayUserComponent,
+    UserOperationsComponent,
     UsersComponent,
-    CreateUserComponent,
-    EditUserDetailsComponent
+    // CreateUserComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +35,7 @@ import { EditUserDetailsComponent } from '../user-management/edit-user-details/e
   ],
   exports: [
      UserOperationsComponent,
-     CreateUserComponent,
+    //  CreateUserComponent,
     DisplayUserComponent,
      UsersComponent,
     CommonModule,

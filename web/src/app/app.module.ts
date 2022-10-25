@@ -15,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-
+import { CreateUserComponent } from './user-management/create-user/create-user.component'
 
 @NgModule({
   declarations: [
@@ -24,6 +24,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     LoginFormComponent,
     SignupFormComponent,
     DashboardComponent,
+    CreateUserComponent
    
   ],
   imports: [
