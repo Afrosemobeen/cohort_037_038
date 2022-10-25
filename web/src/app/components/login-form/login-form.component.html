@@ -4,6 +4,9 @@
   <div>
     <form [formGroup]="loginForm" (ngSubmit)="login()">
       <div>
+        <p *ngIf = "errMessage" class = "alert alert-danger text-center">{{errMessage}}</p>
+      </div>
+      <div>
         <label>Email*</label>
         <input
           type="email"
