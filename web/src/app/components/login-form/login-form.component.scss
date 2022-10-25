@@ -1,0 +1,18 @@
+.form-box{
+  width: 400px;
+  height: 400px;
+  padding: 25px;
+  background-color: antiquewhite;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+}
+button{
+  margin-left: 120px;;
+}
+span{
+  text-decoration: none;
+  padding-left: 50px;
+}

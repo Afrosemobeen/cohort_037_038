@@ -1,42 +1,32 @@
 <div class="col-md-4" class="form-box">
   <h3 class="text-center">LOGIN</h3>
   <hr />
-
   <div>
     <form [formGroup]="loginForm" (ngSubmit)="login()">
       <div>
         <label>Email*</label>
-
         <input
           type="email"
           class="form-control"
           formControlName="email"
           placeholder="abc@example.com"
+          [ngClass]="{
+            'is-invalid': submitted && loginForm.controls['email'].errors
+          }"
         />
 
         <div
-          *ngIf="
-            (loginForm.controls['email'].dirty ||
-              loginForm.controls['email'].touched) &&
-            loginForm.controls['email'].invalid
-          "
+          *ngIf="submitted && loginForm.controls['email'].errors"
+          class="invalid-feedback"
         >
-          <p
-            *ngIf="loginForm.controls['email'].hasError('required')"
-            style="color: red"
-          >
-            *Username is required.
-          </p>
-
-          <p
-            *ngIf="loginForm.controls['email'].hasError('email')"
-            style="color: red"
-          >
-            *Invalid Email.
-          </p>
+          <div *ngIf="loginForm.controls['email'].hasError('required')">
+            Email is required
+          </div>
+          <div *ngIf="loginForm.controls['email'].hasError('email')">
+            Invalid Email
+          </div>
         </div>
       </div>
-
       <div>
         <label>Password*</label>
 
@@ -45,28 +35,25 @@
           class="form-control"
           formControlName="password"
           placeholder="Enter Your Password"
+          [ngClass]="{
+            'is-invalid': submitted && loginForm.controls['password'].errors
+          }"
         />
 
         <div
-          *ngIf="
-            (loginForm.controls['password'].dirty ||
-              loginForm.controls['password'].touched) &&
-            loginForm.controls['password'].invalid
-          "
+          *ngIf="submitted && loginForm.controls['password'].errors"
+          class="invalid-feedback"
         >
-          <p
-            *ngIf="loginForm.controls['password'].hasError('required')"
-            style="color: red"
-          >
-            *Password is required.
-          </p>
+          <div *ngIf="loginForm.controls['password'].hasError('required')">
+            Password is required
+          </div>
+          <div *ngIf="loginForm.controls['password'].hasError('minlength')">
+            Password must be at least 6 characters
+          </div>
         </div>
       </div>
-
       <button class="btn btn-danger mx- my-4">LOGIN</button><br />
-
       <span>Don't have an account?</span>
-
       <a routerLink="/signup">Signup</a>
     </form>
   </div>
