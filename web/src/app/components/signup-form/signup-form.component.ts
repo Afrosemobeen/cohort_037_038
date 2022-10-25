@@ -10,6 +10,7 @@ import { LoginService } from 'app/services/login.service';
 export class SignupFormComponent implements OnInit {
   
   signupForm: FormGroup;
+  errMessage= "";
   submitted = false;
   constructor(private loginSer: LoginService,private fb: FormBuilder, private http: HttpClient) { 
     this.signupForm =  this.fb.group({
@@ -36,14 +37,11 @@ export class SignupFormComponent implements OnInit {
     this.loginSer.createUser(user)
     .subscribe({
       next: (result)=>{
-      //   if (result.find(x => x.username === user.username)) {
-      //     alert("Username already exists");
-      // }
-      // const user = result.find((a:any)=>{
-      //   if(a.username === this.signupForm.value.email) {
-      //     alert("Username already exists");
-      //   }
-      // })
+        if(result.status === "failed"){
+          this.errMessage = "This user or email already existed"
+          return;
+        }
+      this.errMessage = "";
         console.log("result:", result);
         alert("sign up successful");
         this.signupForm.reset();
