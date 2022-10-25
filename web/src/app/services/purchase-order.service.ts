@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { RxwebValidators } from '@rxweb/reactive-form-validators';
+import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +11,7 @@ export class PurchaseOrderService {
   numSelected: String = '';
   states: any = [];
   cities: any = [];
+  flag: boolean = false;
   constructor(private http: HttpClient, private fbSer: FormBuilder) {}
   getAllOrders() {
     return this.http.get('http://localhost:5000/orders');
@@ -30,7 +30,7 @@ export class PurchaseOrderService {
   getOrderFormData() {
     return this.fbSer.group({
       _id: [''],
-      po_num: ['', [Validators.required, RxwebValidators.unique()]],
+      po_num: ['', [Validators.required]],
       desc: [
         '',
         [

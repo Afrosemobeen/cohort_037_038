@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { PurchaseOrderService } from 'app/services/purchase-order.service';
 import { __values } from 'tslib';
 
@@ -13,6 +13,7 @@ export class CreateOrderComponent implements OnInit {
   states: any = [];
   cities: any = [];
   poNumbers: any = [];
+  flag: Boolean = false;
   valid: boolean = true;
   id: any = '';
   selectedCountry: any = {
@@ -25,17 +26,14 @@ export class CreateOrderComponent implements OnInit {
   ngOnInit(): void {
     //this.showAll();
     this.states = this.purchaseOrderSer.getStates().subscribe((data: any) => {
-      console.log(data);
       this.purchaseOrderSer.states = data;
       this.states = data;
     });
     this.cities = this.purchaseOrderSer.getCities().subscribe((data: any) => {
-      console.log(data);
       this.purchaseOrderSer.cities = data;
       this.cities = data;
     });
     this.poNumbers = this.purchaseOrderSer.getPoNumber().subscribe((data) => {
-      console.log(data);
       this.purchaseOrderSer.poNumbers = data;
       this.poNumbers = data;
     });
@@ -43,33 +41,42 @@ export class CreateOrderComponent implements OnInit {
 
   selectedPo(e: any) {
     this.id = e.target.value;
-    console.log(e.target.value);
   }
 
   createOrder() {
-    console.log('orderForm:', this.orderForm.value);
+    const found = this.purchaseOrderSer.orderList.some(
+      (el: any) => el.po_num === this.id
+    );
+    if (!found) {
+      this.flag = false;
+      console.log('orderForm:', this.orderForm.value);
 
-    if (!this.orderForm.valid) {
-      this.valid = false;
+      if (!this.orderForm.valid) {
+        this.valid = false;
+      }
+      const order = {
+        ...this.orderForm.value,
+      };
+
+      this.purchaseOrderSer.createOrder(order).subscribe({
+        next: (result: any) => {
+          this.clearForm();
+          this.purchaseOrderSer.getAllOrders().subscribe({
+            next: (data: any) => {
+              console.log('data:', data);
+              this.purchaseOrderSer.orderList = data;
+            },
+            error: () => {},
+            complete: () => {},
+          });
+        },
+        error: () => {},
+        complete: () => {},
+      });
+    } else {
+      this.flag = true;
+      console.log('Ponumber exists');
     }
-    const order = {
-      ...this.orderForm.value,
-    };
-    this.purchaseOrderSer.createOrder(order).subscribe({
-      next: (result: any) => {
-        this.clearForm();
-        this.purchaseOrderSer.getAllOrders().subscribe({
-          next: (data: any) => {
-            console.log('data:', data);
-            this.purchaseOrderSer.orderList = data;
-          },
-          error: () => {},
-          complete: () => {},
-        });
-      },
-      error: () => {},
-      complete: () => {},
-    });
   }
 
   clearForm() {

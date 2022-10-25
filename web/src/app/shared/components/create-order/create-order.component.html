@@ -26,7 +26,7 @@
                 {{ poNumber.lookup_value }}
               </option>
             </select>
-
+            <p *ngIf="this.flag">This Po number already exists</p>
             <div
               *ngIf="
                 (orderForm.controls['po_num'].dirty ||
