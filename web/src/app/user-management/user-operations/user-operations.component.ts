@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+// import { MatDialog } from '@angular/material/dialog';
 import { UserServiceService } from '../../services/user-service.service';
 import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { EditUserDetailsComponent } from '../edit-user-details/edit-user-details.component';
@@ -13,7 +13,6 @@ export class UserOperationsComponent implements OnInit {
   currUser:any={}
   formFlag="something"
   constructor(private userService: UserServiceService,
-    private dialog:MatDialog,
     private modalService: NgbModal) { }
 
   ngOnInit(): void {

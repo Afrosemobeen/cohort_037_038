@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+// import { MatDialog } from '@angular/material/dialog';
 import { UserServiceService } from '../../services/user-service.service';
 import { Pipe, PipeTransform } from "@angular/core";
 import { orderBy } from 'lodash';
@@ -10,11 +10,19 @@ import { orderBy } from 'lodash';
   styleUrls: ['./display-user.component.scss']
 })
 export class DisplayUserComponent implements OnInit {
+  filterModel={
+    fullName:"",
+    displayName:"",
+    title:"",
+    userLevel:"",
+    email:"",
+    phone:"",
+    status:""
+    }
   usersList:any=[];
   searchText:any ="";
   @Output() onUserEditEvent : EventEmitter<any>
-  constructor(public userService: UserServiceService,
-              private dialog:MatDialog) { 
+  constructor(public userService: UserServiceService,) { 
               this.onUserEditEvent= new EventEmitter()
               }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, NgForm, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+// import { MatDialog } from '@angular/material/dialog';
 import { UserServiceService } from '../../services/user-service.service';
 import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { CreateUserComponent } from '../create-user/create-user.component';
@@ -84,8 +84,7 @@ export class UsersComponent implements OnInit {
   phone:FormControl
   status: FormControl 
   constructor(private userService: UserServiceService,
-    private modalService: NgbModal,
-    private dialog:MatDialog) {
+    private modalService: NgbModal,) {
             this.fullName = new FormControl('',[Validators.required]),
             this.displayName = new FormControl('',[Validators.required]),
             this.title = new FormControl('',[Validators.required]),
