@@ -39,9 +39,9 @@ export class SignupFormComponent implements OnInit {
     console.log("user",user);
     this.loginSer.createUser(user)
     .subscribe({
-      next: (result)=>{
+      next: (result: any)=>{
         if(result.status === "failed"){
-          this.errMessage = "This user or email already existed"
+          this.errMessage = "This user or email already existed";
           return;
         }
       this.errMessage = "";
