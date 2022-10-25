@@ -13,18 +13,16 @@ export class CreateOrderComponent implements OnInit {
   states: any = [];
   cities: any = [];
   poNumbers: any = [];
+  maxDate: any;
   flag: Boolean = false;
   valid: boolean = true;
   id: any = '';
-  selectedCountry: any = {
-    id: '0',
-    name: '',
-  };
 
   constructor(public purchaseOrderSer: PurchaseOrderService) {}
 
   ngOnInit(): void {
-    //this.showAll();
+    this.futureDateDisable();
+
     this.states = this.purchaseOrderSer.getStates().subscribe((data: any) => {
       this.purchaseOrderSer.states = data;
       this.states = data;
@@ -37,6 +35,20 @@ export class CreateOrderComponent implements OnInit {
       this.purchaseOrderSer.poNumbers = data;
       this.poNumbers = data;
     });
+  }
+
+  futureDateDisable() {
+    var date: any = new Date();
+    var todaydate: any = date.getDate();
+    var month: any = date.getMonth() + 1;
+    var year: any = date.getFullYear();
+    if (todaydate < 10) {
+      todaydate = '0' + todaydate;
+    }
+    if (month < 10) {
+      month = '0' + month;
+    }
+    this.maxDate = year + '-' + month + '-' + todaydate;
   }
 
   selectedPo(e: any) {
@@ -82,20 +94,4 @@ export class CreateOrderComponent implements OnInit {
   clearForm() {
     this.orderForm.reset();
   }
-
-  // showAll() {
-  //   this.purchaseOrderSer.getAll().subscribe((data: any) => {
-  //     this.states = data;
-  //     console.log(this.states);
-  //   });
-  // }
-
-  // onSelect(country_id: any) {
-  //   this.purchaseOrderSer.getAll().subscribe((res: any) => {
-  //     (this.states = res['states'].filter(
-  //       (res: any) => res.country_id == country_id!.value
-  //     )),
-  //       console.log(this.states);
-  //   });
-  // }
 }

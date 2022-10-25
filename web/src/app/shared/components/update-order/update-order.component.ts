@@ -24,12 +24,14 @@ export class UpdateOrderComponent implements OnInit {
   orderForm = this.purchaseOrderSer.getOrderFormData();
   id: any;
   flag: boolean = false;
+  maxDate: any;
 
   constructor(public purchaseOrderSer: PurchaseOrderService) {
     this.onCancelUpdateEvent = new EventEmitter();
   }
 
   ngOnInit(): void {
+    this.futureDateDisable();
     this.orderForm.setValue({ ...this.order });
     this.states = this.purchaseOrderSer.getStates().subscribe((data: any) => {
       this.purchaseOrderSer.states = data;
@@ -43,6 +45,20 @@ export class UpdateOrderComponent implements OnInit {
       this.purchaseOrderSer.poNumbers = data;
       this.poNumbers = data;
     });
+  }
+
+  futureDateDisable() {
+    var date: any = new Date();
+    var todaydate: any = date.getDate();
+    var month: any = date.getMonth() + 1;
+    var year: any = date.getFullYear();
+    if (todaydate < 10) {
+      todaydate = '0' + todaydate;
+    }
+    if (month < 10) {
+      month = '0' + month;
+    }
+    this.maxDate = year + '-' + month + '-' + todaydate;
   }
 
   selectedPo(e: any) {

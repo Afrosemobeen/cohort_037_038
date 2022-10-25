@@ -18,7 +18,6 @@ export class PurchaseOrderService {
   }
 
   createOrder(orders: any) {
-    console.log('Order: ', orders);
     delete orders._id;
     return this.http.post('http://localhost:5000/orders', orders);
   }
