@@ -7,7 +7,7 @@ app.use(cors())
 app.use(express.json());
 app.get("/", function(req, res){
     console.log(req);
-    res.send("Welcome to Employee Operations App");
+    res.send("Welcome to Cognizant");
 })
 app.use(require('./routes/login_routes'));
 app.listen(5000, function (err){
