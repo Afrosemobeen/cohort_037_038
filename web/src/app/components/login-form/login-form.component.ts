@@ -10,47 +10,48 @@ import { LoginService } from 'app/services/login.service';
   styleUrls: ['./login-form.component.scss'],
 })
 export class LoginFormComponent implements OnInit {
-  loginForm: FormGroup<any>;
+  loginForm: FormGroup;
+  errMessage= "";
   submitted = false;
-  constructor(
-    private loginSer: LoginService,
-    private fb: FormBuilder,
-    private http: HttpClient,
-    private router: Router
-  ) {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+  constructor(private loginSer: LoginService,private fb: FormBuilder, private http: HttpClient, private router: Router) { 
+    this.loginForm =  this.fb.group({
+      email: ['', [Validators.required,Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-    });
+     
+    }
+    );
   }
 
-  ngOnInit(): void {}
-  login() {
+  ngOnInit(): void {
+  }
+  login(){
     this.submitted = true;
-    if (!this.loginForm.valid) {
-      alert('data is missing for some fields');
+    if(!this.loginForm.valid){
+      alert("data is missing for some fields");
       return;
     }
-    this.loginSer.getUser().subscribe({
-      next: (result: any) => {
-        const user = result.find((a: any) => {
-          return (
-            a.username === this.loginForm.value.email &&
-            a.password === this.loginForm.value.password
-          );
-        });
-        if (user) {
-          alert('You are successfully logged in');
-          this.loginForm.reset();
-          this.router.navigate(['dashboard']);
-        } else {
-          alert('Invalid username or password');
-        }
+    this.loginSer.checkLogin(this.loginForm.value)
+    .subscribe({
+      next: (result:any)=>{
+         console.log("result: ", result);
+
+      if(result.length>0){
+        //alert("You are successfully logged in");
+        this.errMessage = "You are successfully logged in";
+         this.loginForm.reset();
+         this.router.navigate(['dashboard']);
+       }
+       else{
+        this.errMessage = "Invalid username or password";
+       // alert("Invalid username or password");
+       }
       },
-      error: () => {
-        alert('Something went wrong');
-      },
-      complete: () => {},
-    });
+        error: ()=>{
+          alert("Something went wrong");
+        },
+        complete: ()=>{}
+      })
   }
-}
+  }
+
+
