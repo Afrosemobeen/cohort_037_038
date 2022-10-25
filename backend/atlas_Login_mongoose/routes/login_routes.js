@@ -1,5 +1,5 @@
 var express = require("express");
-var empOperations = require("../controllers/emp_controller");
+var empOperations = require("../controllers/login_controller");
 
 var router = express.Router();
 

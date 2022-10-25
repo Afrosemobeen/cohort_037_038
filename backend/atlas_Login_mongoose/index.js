@@ -9,7 +9,7 @@ app.get("/", function(req, res){
     console.log(req);
     res.send("Welcome to Employee Operations App");
 })
-app.use(require('./routes/emp_routes'));
+app.use(require('./routes/login_routes'));
 app.listen(5000, function (err){
     if(err){
         console.log("Got error while listening on port some changes");
