@@ -33,6 +33,6 @@ clearFilter(){
   console.log("From clear filter");
   this.userService.filterModel={};
   this.userService.filterFlag="disabled";
-
+  this.router.navigate(["/carousel"]);
 }
 }
